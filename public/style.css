@@ -151,3 +151,35 @@ footer{
     height: 260px;
     background-color: #FFD2A9;
 }
+
+
+
+
+
+
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+
+.fsection:nth-child(2){
+    transition-delay: 300ms;
+}
+
+.ssection:nth-child(2){
+    transition-delay: 300ms;
+}

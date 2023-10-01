@@ -10,8 +10,9 @@
 
 
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <title>Login</title>
+    <title>Main Page</title>
 </head>
 <body>
 
@@ -25,10 +26,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link text-black" href="#">Login</a>
+                    <a class="nav-link text-black" href="{{ route('login') }}">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-black" href="#">Register</a>
+                    <a class="nav-link text-black" href="{{ route('register') }}">Register</a>
                 </li>
                 <li class="nav-item">
                     {{-- Якорь до секции снизу --}}
@@ -45,7 +46,7 @@
     </header>
 
     <div class="main">
-        <div class="slider">
+        <div class="slider hidden">
 
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -74,28 +75,30 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
-
-
         </div>
-        <div class="advantages">
+
+        <div class="advantages hidden">
             advantages
         </div>
-        <div class="services">
+
+        <div class="services hidden">
             что можно делать на сайте
         </div>
+
         <div class="faq_section d-flex" id="faq_section">
-            <div class="faq">
+            <div class="faq hidden fsection">
                 Ответы на вопросы
             </div>
-            <div class="about">
+            <div class="about hidden fsection">
                 О нас
             </div>
         </div>
+
         <div class="socials_section d-flex" id="socials_section">
-            <div class="response ">
+            <div class="response hidden ssection">
                 Отправь мне письмо
             </div>
-            <div class="socials">
+            <div class="socials hidden ssection">
                 Соц сети
             </div>
         </div>
@@ -104,7 +107,5 @@
     <footer class="container-fluid col-12">
         footer
     </footer>
-
-
 </body>
 </html>
