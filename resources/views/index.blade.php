@@ -39,6 +39,14 @@
                     {{-- Еще якорь до секции снизу --}}
                     <a class="nav-link text-black" href="#socials_section">Contacts</a>
                 </li>
+
+                {{-- Временная ссылка --}}
+                <li class="nav-item">
+                    {{-- Еще якорь до секции снизу --}}
+                    <a class="nav-link text-black" href="{{ route('home') }}">Cabinet</a>
+                </li>
+
+
                 </ul>
             </div>
             </div>
