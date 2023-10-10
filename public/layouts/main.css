@@ -13,6 +13,7 @@ body{
     background: linear-gradient(to right, #FE963B, #FA8023);
     height: 100%;
     width: 100%;
+    overflow-y: auto;
 }
 
 .root_container{
@@ -21,38 +22,66 @@ body{
 }
 
 .top_row{
-    min-height: 5%;
+    height: 48px;
     display: flex;
-    margin: 5px;
+    margin: 10px;
 }
-
 
 .menu_icon{
     background-color: #FFD2A9;
     width: 48px;
-    margin-right: 5px;
+    height: 100%;
+    margin-right: 10px;
     aspect-ratio: 1 / 1;
     border-radius: 12px;
+    display: flex;
+    vertical-align: middle;
 }
 
 .search_bar{
     width: 40%;
     background-color: #FFD2A9;
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    font-weight: bold;
+    line-height: 48px;
+    font-size: 1.4em;
 }
 
 .page_title{
-    width: auto;
+    width: 44%;
     height: 100%;
-    font-size: 1.8em;
+    border-radius: 12px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #fff;
+    margin: 0 10px;
+    line-height: 48px;
+    text-align: center;
 }
 
 .user_info{
-    width: auto;
+    width: 10%;
     color: #000;
+    margin-left: auto;
+    background-color: #FFD2A9;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 48px;
+    font-size: 1em;
+}
+
+.avatar img{
+    width: 44px;
+    border-radius: 24px;
+    margin-top: -1px;
 }
 
 .bottom_row{
     display: flex;
-    margin: 5px;
+    margin: 10px;
     background-color: rgba(255, 255, 255, 0.85);
+    height: 100vh;
+    border-radius: 12px;
 }
