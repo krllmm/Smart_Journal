@@ -15,6 +15,7 @@ return new class extends Migration
             $table->integer('id')->autoIncrement()->unsigned();
             $table->string('category')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
