@@ -31,4 +31,5 @@ class Article extends Model
     public function Co_authors(){
         return $this->belongsToMany(User::class);
     }
+
 }

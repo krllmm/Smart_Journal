@@ -10,7 +10,7 @@
 
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
 
-    <title>Main layout</title>
+    <title>SJ - @yield('title')</title>
 </head>
 <body>
     <div class="root_container container-fluid col-12 p-0 m-0">
@@ -35,7 +35,7 @@
         </div>
         <div class="row bottom_row">
             <div class="container main">
-                content
+                @yield('content')
             </div>
         </div>
     </div>

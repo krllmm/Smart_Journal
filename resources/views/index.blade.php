@@ -25,6 +25,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
+
+                @if(Auth::check())
+                    <li class="nav-item active">
+                        <p class="nav-link text-black"> {{ Auth::user()->login }} </p>
+                    </li>
+                @endif
+
                 <li class="nav-item active">
                     <a class="nav-link text-black" href="{{ route('login') }}">Login</a>
                 </li>
