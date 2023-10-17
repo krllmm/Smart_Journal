@@ -38,6 +38,53 @@ body{
     vertical-align: middle;
 }
 
+.menu_icon button{
+    background-color: transparent;
+    border: none;
+}
+
+
+
+
+
+.hidden_dropdown{
+    visibility: hidden;
+}
+
+#dropdown{
+    position: absolute;
+    background-color: #FFD2A9;
+    min-width: 180px;
+    min-height: 230px;
+    text-align: left;
+    border-radius: 12px;
+    margin-top: 58px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 10px;
+    margin: 0;
+}
+
+ul li a{
+    font-size: 24px;
+    text-decoration: none;
+    color: #000;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
 .search_bar{
     width: 40%;
     background-color: #FFD2A9;

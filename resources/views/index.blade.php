@@ -28,7 +28,7 @@
 
                 @if(Auth::check())
                     <li class="nav-item active">
-                        <p class="nav-link text-black"> {{ Auth::user()->login }} </p>
+                        <a class="nav-link text-black" href="{{ route('home') }}"> {{ Auth::user()->login }} </a>
                     </li>
                 @endif
 
@@ -48,10 +48,10 @@
                 </li>
 
                 {{-- Временная ссылка --}}
-                <li class="nav-item">
-                    {{-- Еще якорь до секции снизу --}}
+                {{-- <li class="nav-item">
+
                     <a class="nav-link text-black" href="{{ route('home') }}">Cabinet</a>
-                </li>
+                </li> --}}
 
 
                 </ul>
