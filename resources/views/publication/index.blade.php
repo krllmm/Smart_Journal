@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title')
-    {{ $user->login }}
+    Your publications
 @endsection
 
 @section('content')
-    your profile page
+    your articles
 @endsection
