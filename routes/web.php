@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'index');
 Route::view('/home', 'layouts.main')->name('home');
 Route::resource('article', ArticleController::class);
+Route::resource('tag', TagController::class);
+Route::resource('category', CategoryController::class);
 
 Route::get('/login', [AccountController::class, 'index'])->name('login');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
