@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('content');
 
             $table->string('title_latin')->default('no_title');
-
-            $table->enum('status', ['producing', 'published', 'submitted', 'accepted'])->default('producing');
+            // , ['producing', 'published', 'submitted', 'accepted'] такие будут статусы
+            $table->string('status')->default('producing');
             $table->date('deadline');
 
             $table->integer('category_id')->unsigned();

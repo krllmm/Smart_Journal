@@ -5,4 +5,6 @@
 
 @section('content')
     your profile page
+
+    <a href="{{ route('logout') }}">log out</a>
 @endsection

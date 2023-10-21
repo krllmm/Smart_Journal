@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'index');
+Route::view('/', 'index')->name('main');
 Route::view('/home', 'layouts.main')->name('home');
 Route::resource('article', ArticleController::class);
 Route::resource('tag', TagController::class);

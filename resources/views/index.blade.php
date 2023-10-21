@@ -28,7 +28,7 @@
 
                 @if(Auth::check())
                     <li class="nav-item active">
-                        <a class="nav-link text-black" href="{{ route('home') }}"> {{ Auth::user()->login }} </a>
+                        <a class="nav-link text-black" href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
                     </li>
                 @endif
 

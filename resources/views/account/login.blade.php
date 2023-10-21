@@ -28,6 +28,8 @@
                     <label>Login</label>
                     <input type="text" name="login" placeholder="Username" required>
                     <input type="password" name="password" placeholder="Password" required>
+                    <label for="remember_me">Remember me</label>
+                    <input type="checkbox" name="remember_me">
                     <button type="submit">log in</button>
                 </form>
             </div>

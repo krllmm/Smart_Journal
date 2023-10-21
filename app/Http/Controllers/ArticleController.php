@@ -4,71 +4,92 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Tag;
+use App\Models\Category;
+use App\Models\ArticleTag;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $articles = Article::all();
         return  view('article.index', compact('articles'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        return view('article.create');
+        $tags = Tag::all();
+        $categories = Category::all();
+        return view('article.create', compact('tags', 'categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $data = request()->validate([
-
+        $request->validate([
+            'title' => 'string',
+            'content' => 'string',
+            'status' => '',
+            'deadline' => 'date',
+            'category_id' => '',
+            'tags' => '',
         ]);
 
-        Article::create($data);
+        $data = $request->all();
+        $tags = $data['tags'];
+        unset($data['tags']);
+
+        $user = Auth::user();
+        $userId = $user->id;
+
+        $data['user_id'] = $userId;
+
+        $article = Article::create($data);
+        $article->tags()->attach($tags);
+
         return redirect()->route('article.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Article $article)
     {
         return view('article.show', compact('article'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Article $article)
     {
-        return view('article.edit', compact('article'));
+        $statuses = [
+            'To-do',
+            'In progress',
+            'Done',
+            'Delayed'
+        ];
+
+        $tags = Tag::all();
+        $categories = Category::all();
+        return view('article.edit', compact('article', 'tags', 'categories', 'statuses'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Article $article)
     {
-        $data = request()->validate([
-
+        $request->validate([
+            'title' => 'string',
+            'content' => 'string',
+            'status' => '',
+            'deadline' => 'date',
+            'category_id' => '',
+            'tags' => '',
         ]);
 
+        $data = $request->all();
+        $tags = $data['tags'];
+        unset($data['tags']);
+
         $article->update($data);
+        $article->tags()->sync($tags);
+
         return redirect()->route('article.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Article $article)
     {
         $article->delete();

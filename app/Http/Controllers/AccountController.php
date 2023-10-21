@@ -18,12 +18,12 @@ class AccountController extends Controller
     public function create(Request $request)
     {
         $data = request()->validate([
-            'name' => 'string',
+            'login' => 'string',
             'password' => 'string',
         ]);
 
         User::create($data);
-        return redirect()->route('home');
+        return redirect()->route('main');
     }
 
     public function register()
@@ -38,19 +38,21 @@ class AccountController extends Controller
             'password' => 'string',
         ]);
 
+        $remember = ( !empty( $request->remember_me ) )? TRUE : FALSE;
+
         if (Auth::attempt([
             'login' => $request->get('login'),
             'password' => $request->get('password'),
-        ])){
+        ], $remember)){
             return redirect()->route('article.index');
         }
 
-        return redirect()->route('home');
+        return redirect()->route('main');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('main');
     }
 }
