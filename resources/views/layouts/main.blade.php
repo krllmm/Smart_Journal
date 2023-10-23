@@ -49,6 +49,14 @@
                             </svg>
                             <a href="{{ route('settings') }}" class="drop_item">Settings</a>
                         </li>
+                        @if(Auth::user()->role_id == 1)
+                            <li>
+                                <a href="{{ route('category.index') }}" class="drop_item">Categories</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('tag.index') }}" class="drop_item">Tags</a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
 
