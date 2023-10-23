@@ -10,8 +10,7 @@ use App\Models\Article;
 class PublicationController extends Controller
 {
     public function index(){
-        $id = Auth::user()->id;
-        $articles = Article::where('user_id', 'id')->get();
+        $articles = Article::where('user_id', Auth::user()->id)->get();
 
         return view('publication.index', compact('articles'));
     }
