@@ -8,7 +8,7 @@
     <a href="{{ route('tag.create') }}">create tag</a>
     @foreach ($tags as $a)
         <div>
-            {{ $a->title }}
+            {{ $a->title }} : {{ count($a->articles) }}
         </div>
         <div>
             <a href="{{ route('tag.edit', $a->id) }}">edit</a>

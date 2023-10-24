@@ -8,7 +8,7 @@
     <a href="{{ route('category.create') }}">create category</a>
     @foreach ($categories as $a)
         <div>
-            {{ $a->category }}
+            {{ $a->category }} : {{ count($a->articles) }}
         </div>
         <div>
             <a href="{{ route('category.edit', $a->id) }}">edit</a>
