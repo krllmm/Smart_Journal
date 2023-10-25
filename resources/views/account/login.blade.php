@@ -22,14 +22,24 @@
                 Login
             </div>
 
-            <div>
+            <div class="form_container">
                 <form action="{{ route('sign_in') }}">
                     @csrf
-                    <label>Login</label>
-                    <input type="text" name="login" placeholder="Username" required>
-                    <input type="password" name="password" placeholder="Password" required>
-                    <label for="remember_me">Remember me</label>
-                    <input type="checkbox" name="remember_me">
+                    <div>
+                        <label>Login</label>
+                        <input type="text" name="login" required>
+                    </div>
+
+                    <div>
+                        <label>Password</label>
+                        <input type="password" name="password" required>
+                    </div>
+
+                    <div class="remember">
+                        <label for="remember_me">Remember me</label>
+                        <input type="checkbox" name="remember_me">
+                    </div>
+
                     <button type="submit">log in</button>
                 </form>
             </div>

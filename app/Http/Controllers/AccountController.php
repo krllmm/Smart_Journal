@@ -18,6 +18,8 @@ class AccountController extends Controller
     public function create(Request $request)
     {
         $data = request()->validate([
+            'name' => 'string',
+            'surname' => 'string',
             'login' => 'string',
             'password' => 'string',
         ]);

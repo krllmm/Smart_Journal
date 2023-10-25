@@ -6,20 +6,31 @@
 @section('content')
     your articles
 
-    @foreach ($articles as $a)
+    @if(count($articles) == 0)
         <div>
-            {{ $a->title }}
+            Oops, looks like you haven`t got any articles done
         </div>
         <div>
-            <a href="{{ route('article.show', $a->id) }}">more</a>
+            <a href="{{ route('article.create') }}">Create article</a>
         </div>
-        <div>
-            <a href="{{ route('article.edit', $a->id) }}">edit</a>
-        </div>
-        <form action="{{ route('article.destroy', $a->id) }}" method="post">
-            @csrf
-            @method('delete')
-            <button type="submit">delete</button>
-        </form>
-    @endforeach
+    @else
+        @foreach ($articles as $a)
+            <div>
+                {{ $a->title }}
+            </div>
+            <div>
+                <a href="{{ route('article.show', $a->id) }}">more</a>
+            </div>
+            <div>
+                <a href="{{ route('article.edit', $a->id) }}">edit</a>
+            </div>
+            <form action="{{ route('article.destroy', $a->id) }}" method="post">
+                @csrf
+                @method('delete')
+                <button type="submit">delete</button>
+            </form>
+        @endforeach
+
+    @endif
+
 @endsection
