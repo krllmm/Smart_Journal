@@ -10,4 +10,6 @@ class ArticleCoauthor extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public $table = 'article_coauthors';
 }

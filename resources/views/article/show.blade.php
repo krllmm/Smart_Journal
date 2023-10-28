@@ -17,9 +17,9 @@
         @endforeach
     </div>
 
-    {{-- <div>co authors:
+    <div>co authors:
         @foreach ($article->Co_authors as $coa)
             <p>{{ $coa->login }}</p>
         @endforeach
-    </div> --}}
+    </div>
 @endsection

@@ -29,7 +29,7 @@ class Article extends Model
     }
 
     public function Co_authors(){
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'article_coauthor', 'article_id', 'user_id');
     }
 
 }
