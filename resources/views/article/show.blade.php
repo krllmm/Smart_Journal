@@ -19,7 +19,20 @@
 
     <div>co authors:
         @foreach ($article->Co_authors as $coa)
-            <div>{{ $coa->login }}</div>
+            <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
         @endforeach
+    </div>
+
+    <div>
+        --------------
+    </div>
+    <div>
+        <a href="{{ route('article.edit', $article->id) }}">edit</a>
+    </div>
+    <div>
+        --------------
+    </div>
+    <div>
+        <a href="{{ route('download', $article->id) }}">download</a> .docx file
     </div>
 @endsection

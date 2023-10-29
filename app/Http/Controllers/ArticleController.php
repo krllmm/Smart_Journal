@@ -84,7 +84,6 @@ class ArticleController extends Controller
         $tags = $data['tags'];
         unset($data['tags']);
 
-
         $user = Auth::user();
         $userId = $user->id;
 
@@ -94,8 +93,6 @@ class ArticleController extends Controller
 
             return redirect()->route('article.index');
         }
-
-
 
         $article->update($data);
         $article->tags()->sync($tags);
@@ -110,4 +107,5 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('article.index');
     }
+
 }

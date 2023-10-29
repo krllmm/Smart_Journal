@@ -5,9 +5,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('main');
 Route::view('/home', 'layouts.main')->name('home');
-Route::resource('article', ArticleController::class);
-Route::resource('tag', TagController::class);
-Route::resource('category', CategoryController::class);
+
+Route::resource('tag', TagController::class)->middleware('auth');
+Route::resource('category', CategoryController::class)->middleware('auth');
+
+Route::resource('article', ArticleController::class)->middleware('auth');
+Route::get('download/{article}', [DownloadController::class, 'download'])->name('download');
 
 Route::get('/login', [AccountController::class, 'index'])->name('login');
 Route::get('/register', [AccountController::class, 'register'])->name('register');
@@ -15,7 +18,8 @@ Route::post('/create_account', [AccountController::class, 'create'])->name('crea
 Route::get('/sign_in', [AccountController::class, 'sign_in'])->name('sign_in');
 Route::get('/logout', [AccountController::class, 'logout'])->name('logout');
 
+Route::get('/publication', [PublicationController::class, 'index'])->name('publication')->middleware('auth');
+Route::get('/settings', [SettingsController::class, 'index'])->name('settings')->middleware('auth');
 
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::get('/publication', [PublicationController::class, 'index'])->name('publication');
-Route::get('/settings', [SettingsController::class, 'index'])->name('settings');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
+Route::get('/profile/{user}', [ProfileController::class, 'user'])->name('user')->middleware('auth');

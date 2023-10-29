@@ -46,7 +46,7 @@ class AccountController extends Controller
             'login' => $request->get('login'),
             'password' => $request->get('password'),
         ], $remember)){
-            return redirect()->route('article.index');
+            return redirect()->route('profile');
         }
 
         return redirect()->route('main');

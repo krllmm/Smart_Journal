@@ -65,7 +65,7 @@
                 Search articles
             </div>
             <div class="page_title">
-                Your cabinet
+
             </div>
             <div class="user_info">
                 <a class="nav-link text-black" href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
