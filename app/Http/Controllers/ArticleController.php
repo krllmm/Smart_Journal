@@ -84,8 +84,23 @@ class ArticleController extends Controller
         $tags = $data['tags'];
         unset($data['tags']);
 
+
+        $user = Auth::user();
+        $userId = $user->id;
+
+        if($userId == $article->author->id){
+            $article->update($data);
+            $article->tags()->sync($tags);
+
+            return redirect()->route('article.index');
+        }
+
+
+
         $article->update($data);
         $article->tags()->sync($tags);
+
+        $article->Co_authors()->attach($userId);
 
         return redirect()->route('article.index');
     }

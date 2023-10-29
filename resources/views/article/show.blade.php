@@ -19,7 +19,7 @@
 
     <div>co authors:
         @foreach ($article->Co_authors as $coa)
-            <p>{{ $coa->login }}</p>
+            <div>{{ $coa->login }}</div>
         @endforeach
     </div>
 @endsection
