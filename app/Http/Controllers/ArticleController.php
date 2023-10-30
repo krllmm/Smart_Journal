@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Tag;
 use App\Models\Category;
-use App\Models\ArticleTag;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller

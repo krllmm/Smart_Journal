@@ -95,18 +95,6 @@ ul li a{
     font-size: 1.4em;
 }
 
-.page_title{
-    width: 44%;
-    height: 100%;
-    border-radius: 12px;
-    font-size: 2.5em;
-    font-weight: bold;
-    color: #fff;
-    margin: 0 10px;
-    line-height: 48px;
-    text-align: center;
-}
-
 .user_info{
     width: 10%;
     color: #000;
@@ -120,9 +108,9 @@ ul li a{
 }
 
 .avatar img{
-    width: 44px;
+    width: 48px;
     border-radius: 24px;
-    margin-top: -1px;
+    object-fit: cover;
 }
 
 .bottom_row{
