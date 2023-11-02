@@ -20,13 +20,6 @@
                 <li>
                     <a href="#" class="logo">Smart Journal</a>
                 </li>
-
-                {{-- @if(Auth::check())
-                    <li>
-                        <a href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
-                    </li>
-                @endif --}}
-
                 <li>
                     <a href="{{ route('login') }}">Login</a>
                 </li>
@@ -64,7 +57,6 @@
             </div>
             <div class="socials">
                 <ul>
-                    <li>X</li>
                     <li>facebook</li>
                     <li>telegram</li>
                 </ul>
