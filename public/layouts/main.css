@@ -3,46 +3,67 @@
     padding: 0;
 }
 
-html{
-    width: 100%;
-    height: 100%;
-}
-
 body{
-    background: #FA8023;
-    background: linear-gradient(to right, #FE963B, #FA8023);
-    height: 100%;
-    width: 100%;
+    background: #0d1117;
     overflow-y: auto;
 }
 
-.root_container{
-    width: 100%;
-    height: 100%;
-}
-
-.top_row{
-    height: 48px;
+header{
     display: flex;
-    margin: 10px;
+    padding: 14px;
+    background-color: #010409;
 }
 
-.menu_icon{
-    background-color: #FFD2A9;
-    width: 48px;
-    height: 100%;
-    margin-right: 10px;
-    aspect-ratio: 1 / 1;
-    border-radius: 12px;
+.header-start{
     display: flex;
-    vertical-align: middle;
+    flex: 1 1 auto;
+    gap: 12px;
+    /* border: 1px solid red; */
 }
 
-.menu_icon button{
+.header-start button{
+    min-width: 32px;
+    min-height: 32px;
     background-color: transparent;
-    border: none;
+    border: 1px solid #656c76;
+    border-radius: 8px;
 }
 
+.header-start button svg{
+    margin: 4px;
+}
+
+.header-end{
+    display: flex;
+    flex: 1 1 auto;
+    /* border: 1px solid green; */
+    justify-content: end;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-end a{
+    color: rgba(255, 255, 255, .7);
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.header-end button{
+    min-width: 32px;
+    min-height: 32px;
+    background-color: transparent;
+    border: 1px solid #656c76;
+    border-radius: 8px;
+}
+
+.header-end button svg{
+    margin: 4px;
+}
+
+.header-end img{
+    height: 32px;
+    border-radius: 8px;
+}
 
 
 
@@ -86,37 +107,23 @@ ul li a{
 
 
 .search_bar{
-    width: 40%;
-    background-color: #FFD2A9;
-    color: rgba(0, 0, 0, 0.5);
-    border-radius: 12px;
-    font-weight: bold;
-    line-height: 48px;
-    font-size: 1.4em;
-}
-
-.user_info{
-    width: 10%;
-    color: #000;
-    margin-left: auto;
-    background-color: #FFD2A9;
-    border-radius: 12px;
+    border-radius: 8px;
+    border: 1px solid #656c76;
+    flex: 0.7 1 auto;
     display: flex;
-    justify-content: space-between;
-    line-height: 48px;
-    font-size: 1em;
+    align-items: center;
 }
 
-.avatar img{
-    width: 48px;
-    border-radius: 24px;
-    object-fit: cover;
+.search_bar p{
+    color: #656c76;
+    margin: 0 0 0 8px;
+    font-size: 1rem;
 }
 
 .bottom_row{
+    color: white;
     display: flex;
-    margin: 10px;
-    background-color: rgba(255, 255, 255, 0.85);
-    height: 100vh;
-    border-radius: 12px;
+    /* background-color: rgba(255, 255, 255, 0.85); */
+    width: 80%;
+    margin: 0 auto;
 }

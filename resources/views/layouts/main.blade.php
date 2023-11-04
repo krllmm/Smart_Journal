@@ -14,12 +14,44 @@
     <title>SJ - @yield('title')</title>
 </head>
 <body>
-    <div class="root_container container-fluid col-12 p-0 m-0">
-        <div class="row top_row">
-            <div class="menu_icon p-0">
+    <div class="root_container">
+        <header>
+            <div class="header-start">
                 <button onclick="show_dropdown()">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-                        <path d="M4 5a1 1 0 0 0 0 2h16a1 1 0 1 0 0-2H4zm-1 7a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1z" fill="#000"/>
+                    <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                        <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z" fill="#656c76"></path>
+                    </svg>
+                </button>
+
+                <div class="search_bar">
+                    <p>Search articles</p>
+                </div>
+            </div>
+
+            <div class="header-end">
+
+                <button>
+                    <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" >
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.293 1.293A1 1 0 0 1 10 1h8a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a1 1 0 0 1 .293-.707l6-6zM18 3h-7v5a1 1 0 0 1-1 1H5v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM6.414 7H9V4.414L6.414 7zM7 13a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1z" fill="#656c76"/>
+                    </svg>
+                </button>
+                <button>
+                    <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true">
+                        <path d="M2.544 5.168A2.777 2.777 0 0 1 4.8 4h14.4c.936 0 1.753.47 2.256 1.168.343.478.544 1.067.544 1.699v10.266C22 18.682 20.78 20 19.2 20H4.8C3.22 20 2 18.682 2 17.133V6.867c0-.632.2-1.221.544-1.7zM4.933 6l6.327 6.965a1 1 0 0 0 1.48 0L19.067 6H4.933zM20 7.948l-5.78 6.362a3 3 0 0 1-4.44 0L4 7.948v9.185c0 .514.392.867.8.867h14.4c.408 0 .8-.353.8-.867V7.948z" fill="#656c76"/>
+                    </svg>
+                </button>
+
+                <a href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
+
+                <img src="{{ asset('images/default_profile.png') }}"/>
+
+            </div>
+
+
+            {{-- <div class="menu_icon p-0">
+                <button onclick="show_dropdown()">
+                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true">
+                        <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z" fill="#656c76"></path>
                     </svg>
                 </button>
 
@@ -61,6 +93,7 @@
                 </div>
 
             </div>
+
             <div class="search_bar">
                 Search articles
             </div>
@@ -69,9 +102,11 @@
                 <a class="nav-link text-black" href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
                 {{-- <div class="avatar">
                     <img src="{{ asset('images/default_profile.png') }}"/>
-                </div> --}}
-            </div>
-        </div>
+                </div>
+            </div> --}}
+
+        </header>
+
         <div class="row bottom_row">
             <div class="container main">
                 @yield('content')
