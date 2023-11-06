@@ -39,7 +39,7 @@
                             <thead>
                                 <tr class="head">
                                     <th class="column1">Title</th>
-                                    <th class="column2">Content</th>
+                                    {{-- <th class="column2">Content</th> --}}
                                     <th class="column3">Deadline</th>
                                     <th class="column4">Category</th>
                                     <th class="column5">Tags</th>
@@ -58,7 +58,7 @@
                                             </svg>
                                         </a>
                                     </td>
-                                    <td>{{ $article->content }}</td>
+                                    {{-- <td>{{ $article->content }}</td> --}}
                                     <td>{{ $article->deadline }}</td>
                                     <td>{{ $article->category->category }}</td>
                                     <td>
@@ -80,10 +80,10 @@
                             <thead>
                                 <tr class="head">
                                     <th class="column1">Title</th>
-                                    <th class="column2">Description</th>
+                                    {{-- <th class="column2">Content</th> --}}
                                     <th class="column3">Deadline</th>
-                                    <th class="column4">Worker</th>
-                                    <th class="column5">Client</th>
+                                    <th class="column4">Category</th>
+                                    <th class="column5">Tags</th>
                                     <th class="column6">Status</th>
                                 </tr>
                             </thead>

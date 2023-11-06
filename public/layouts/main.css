@@ -74,7 +74,7 @@ header{
 
 #dropdown{
     position: absolute;
-    background-color: #FFD2A9;
+    background-color: #656c76;
     min-width: 180px;
     min-height: 230px;
     text-align: left;
@@ -96,19 +96,27 @@ ul{
 ul li a{
     font-size: 24px;
     text-decoration: none;
-    color: #000;
+    color: #fff;
     vertical-align: middle;
 }
 
 
 
-
-
-
-
 .search_bar{
+    flex: 0.7 1 auto;
+}
+
+form{
+    display: flex;
+    gap: 12px;
+}
+
+form input{
     border-radius: 8px;
     border: 1px solid #656c76;
+    background: transparent;
+    color: #fff;
+    padding-left: 6px;
     flex: 0.7 1 auto;
     display: flex;
     align-items: center;
