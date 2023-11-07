@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+
 class Article extends Model
 {
     use HasFactory;
@@ -30,6 +33,16 @@ class Article extends Model
 
     public function Co_authors(){
         return $this->belongsToMany(User::class, 'article_coauthor', 'article_id', 'user_id');
+    }
+
+    public function scopeRecentActivity(Builder $query): void
+    {
+        $date = Carbon::now();
+        $date->subDays(7);
+        $query->whereDate('created_at', '>', $date)
+              ->orWhere('updated_at', '>', $date)
+              ->orderBy('created_at', 'desc')
+              ->orderBy('updated_at', 'desc');
     }
 
 }

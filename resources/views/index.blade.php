@@ -26,6 +26,11 @@
                 <li>
                     <a href="{{ route('register') }}">Register</a>
                 </li>
+                @if (Auth::check())
+                    <li>
+                        <a href="{{ route('profile') }}">{{ Auth::user()->login }}</a>
+                    </li>
+                @endif
             </ul>
         </nav>
     </header>

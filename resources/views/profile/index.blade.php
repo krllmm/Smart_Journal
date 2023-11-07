@@ -1,4 +1,17 @@
 <link rel="stylesheet" href="{{ asset('_profile/style.css') }}">
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            events: @json($events)
+        });
+        calendar.render();
+    });
+</script>
+
 @extends('layouts.main')
 @section('title')
     {{ $user->login }}
@@ -33,86 +46,121 @@
                     <h1>{{ $user->name }} {{ $user->surname}}</h1>
                 </div>
                 <div>
-                    <h3>Popular articles</h3>
+                    <h2>Popular articles</h2>
 
-                        <table>
-                            <thead>
-                                <tr class="head">
+                        <table class="article_table">
+                            <thead class="thead">
+                                <tr class="tr_head">
                                     <th class="column1">Title</th>
-                                    {{-- <th class="column2">Content</th> --}}
                                     <th class="column3">Deadline</th>
                                     <th class="column4">Category</th>
                                     <th class="column5">Tags</th>
                                     <th class="column6">Status</th>
+                                    <th class="column7">Rating</th>
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                @foreach($articles as $article)
-                                <tr>
-                                    <td>
-                                        {{ $article->title }}
-                                        <a href="{{ route('article.edit', $article->id) }}">
-                                            <svg id="edit_icon" width="14" height="14" viewBox="0 0 24 24">
-                                                <path fill="#fff" d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875 6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625 2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"></path>
-                                            </svg>
-                                        </a>
-                                    </td>
-                                    {{-- <td>{{ $article->content }}</td> --}}
-                                    <td>{{ $article->deadline }}</td>
-                                    <td>{{ $article->category->category }}</td>
-                                    <td>
-                                        @foreach ($article->tags as $tag)
-                                            {{ $tag->title }},
-                                        @endforeach
-                                    </td>
-                                    <td>{{ $article->status }}</td>
-                                </tr>
+                            <tbody class="tbody">
+                                @foreach($popular_articles as $article)
+                                    <tr class="tr">
+                                        <td class="td">
+                                            {{ $article->title }}
+                                            {{-- <a href="{{ route('article.edit', $article->id) }}">
+                                                <svg id="edit_icon" width="14" height="14" viewBox="0 0 24 24">
+                                                    <path fill="#fff" d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875 6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625 2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"></path>
+                                                </svg>
+                                            </a> --}}
+                                        </td>
+                                        <td class="td">{{ $article->deadline }}</td>
+                                        <td class="td">{{ $article->category->category }}</td>
+                                        <td class="td">
+                                            <div class="tags">
+                                                @foreach ($article->tags as $tag)
+                                                    <div id="tag">
+                                                        {{ $tag->title }}
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                        <td class="td">{{ $article->status }}</td>
+                                        <td class="td">{{ $article->rating }}</td>
+                                    </tr>
                                 @endforeach
                             </tbody>
                         </table>
 
                 </div>
                 <div>
-                    <h3>Your activity</h3>
-
-                        <table>
-                            <thead>
-                                <tr class="head">
-                                    <th class="column1">Title</th>
-                                    {{-- <th class="column2">Content</th> --}}
-                                    <th class="column3">Deadline</th>
-                                    <th class="column4">Category</th>
-                                    <th class="column5">Tags</th>
-                                    <th class="column6">Status</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {{-- @foreach($projects as $project)
-                                <tr>
-                                    <td>
-                                        {{ $project->title }}
-                                        @if(Auth::check())
-                                            <a href="{{ route('project.edit', $project->id) }}">
-                                                <svg id="edit_icon" width="14" height="14" viewBox="0 0 24 24">
-                                                    <path fill="#fff" d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875 6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625 2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"></path>
-                                                </svg>
-                                            </a>
+                    <h2>Your recent activity(2 weeks)</h2>
+                    <table class="article_table">
+                        <thead class="thead">
+                            <tr class="tr_head">
+                                <th class="column1">Title</th>
+                                <th class="column3">Deadline</th>
+                                <th class="column4">Category</th>
+                                <th class="column5">Tags</th>
+                                <th class="column6">Status</th>
+                                <th class="column7">Created at</th>
+                                <th class="column8">Last update</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            @foreach($recent_articles as $article)
+                                    <tr class="tr">
+                                        <td class="td">{{ $article->title }}</td>
+                                        <td class="td">{{ $article->deadline }}</td>
+                                        <td class="td">{{ $article->category->category }}</td>
+                                        <td class="td">
+                                            <div class="tags">
+                                                @foreach ($article->tags as $tag)
+                                                    <div id="tag">
+                                                        {{ $tag->title }}
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        </td>
+                                        <td class="td">{{ $article->status }}</td>
+                                        <td class="td">{{ $article->created_at->format('Y-m-d') }}</td>
+                                        @if ($article->created_at == $article->updated_at)
+                                            <td class="td">Has`t been updated</td>
+                                        @else
+                                            <td class="td">{{ $article->updated_at->format('Y-m-d') }}</td>
                                         @endif
-                                    </td>
-                                    <td>{{ $project->description }}</td>
-                                    <td>{{ $project->deadline }}</td>
-                                    <td>{{ $project->worker->name }}</td>
-                                    <td>{{ $project->client->name }}</td>
-                                    <td>{{ $project->status }}</td>
-                                </tr>
-                                @endforeach --}}
-                            </tbody>
-                        </table>
+                                    </tr>
+                                @endforeach
+                        </tbody>
+                    </table>
 
                 </div>
+
+                <div>
+                    <h2>Deadline calendar</h2>
+                    <div class="indicators">
+                        <div id="indicator">
+                            <div class="red"></div>
+                            To do
+                        </div>
+                        <div id="indicator">
+                            <div class="green"></div>
+                            Done
+                        </div>
+                        <div id="indicator">
+                            <div class="yellow"></div>
+                            In progress
+                        </div>
+                        <div id="indicator">
+                            <div class="blue"></div>
+                            Delayed
+                        </div>
+                    </div>
+                    <div id='calendar'></div>
+                </div>
+
             </div>
         </div>
+
+        <footer>
+            Powered by Laravel 10
+        </footer>
     </div>
 @endsection

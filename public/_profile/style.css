@@ -1,5 +1,9 @@
+:root {
+    --fc-today-bg-color: #3dae98;
+}
+
 .main_container{
-    padding: 24px;
+    padding-top: 24px;
 }
 
 .first_row{
@@ -29,9 +33,18 @@
 
 .button{
     width: 200px;
-    height: 30px;
+    padding: 4px 0;
     border: 1px solid gray;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+    background-color: transparent;
+    border-radius: 6px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.button:hover{
+    background-color: #656c76;
+    transition: background-color .3s ease;
 }
 
 .top_right_container{
@@ -43,13 +56,25 @@
     margin-bottom: 24px;
 }
 
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+#tag{
+    background-color: #656c76;
+    border-radius: 4px;
+    padding: 0 4px;
+}
 
 
 
 
 
 
-table{
+
+.article_table{
     margin: 15px 0 50px 0;
     table-layout: fixed;
     border-collapse: collapse;
@@ -59,36 +84,31 @@ table{
     color: #eee7dc;
 }
 
-table thead tr {
+.article_table .thead .tr_head {
     background-color: #3dae98;
     color: #eee7dc;
     text-align: left;
 }
 
-table th,
-table td {
+.article_table .td,
+.article_table th{
     padding: 12px 15px;
 }
 
-table tbody tr {
+.article_table .tbody .tr {
     border-bottom: 1px solid #3dae98;
 }
 
-table tbody tr:nth-of-type(odd) {
+.article_table .tbody .tr:nth-of-type(odd) {
     background-color: #2D8074;
 }
 
-table tbody tr:nth-of-type(even) {
+.article_table .tbody .tr:nth-of-type(even) {
     background-color: #255750;
 }
 
-table tbody tr:last-of-type {
+.article_table .tbody .tr:last-of-type {
     border-bottom: 2px solid #3dae98;
-}
-
-.table_container{
-    max-height: 100%;
-    padding: 0 60px;
 }
 
 #edit_icon{
@@ -106,6 +126,93 @@ table tbody tr:last-of-type {
     max-width: 44%;
 }
 
-tr td {
+.article_table .tr .td {
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+.indicators{
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+#indicator{
+    background-color: #656c76;
+    border-radius: 4px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.red,
+.yellow,
+.blue,
+.green{
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.green{
+    background-color: lime;
+}
+
+footer{
+    height: 60px;
+    border-top: 1px solid #656c76;
+    margin-top: 60px;
+    line-height: 60px;
+}
+
+
+
+/* Overriding calendar table properties*/
+.fc .fc-scrollgrid-section-body table{
+    background-color: #61676d;
+}
+
+.fc .fc-daygrid-day-number{
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 6px;
+}
+
+.fc{
+    height: 550px;
+}
+
+.fc-direction-ltr .fc-daygrid-event.fc-event-end{
+    border: none;
+    border-radius: 3px;
+    background-color: #3788d8;
+    margin: 0 2px 2px 2px;
+    padding: 0 3px;
+    font-size: 1rem;
     word-wrap: break-word;
 }
