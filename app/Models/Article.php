@@ -38,7 +38,7 @@ class Article extends Model
     public function scopeRecentActivity(Builder $query): void
     {
         $date = Carbon::now();
-        $date->subDays(7);
+        $date->subDays(14);
         $query->whereDate('created_at', '>', $date)
               ->orWhere('updated_at', '>', $date)
               ->orderBy('created_at', 'desc')

@@ -135,3 +135,27 @@ form input{
     width: 80%;
     margin: 0 auto;
 }
+
+
+dialog{
+    margin: auto;
+    width: 40%;
+
+    background-color: #010409;
+    opacity: 0.9;
+    border: 1px solid #656c76;
+    border-radius: 12px;
+    color: white;
+    padding: 12px;
+}
+
+dialog .head{
+    border-bottom: 1px solid #656c76;
+    padding: 0 0 4px 0;
+    margin: 8px 0;
+}
+
+dialog button{
+    color: white;
+    padding: 0 6px;
+}

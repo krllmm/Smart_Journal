@@ -48,9 +48,12 @@ class ProfileController extends Controller
         //возвращает активность за последние 2 недели
         $recent_articles = Article::where('user_id', $user->id)->RecentActivity()->get();
 
-        //dd($data);
+        //возвращает статьи пользователя, которые были изменены другими пользователями
+        $changed_articles = Article::where('user_id', $user->id)->where('status', 'Changed')->get();
 
-        return view('profile.index', compact('user', 'popular_articles', 'recent_articles'), $data);
+        //dd($changed_articles);
+
+        return view('profile.index', compact('user', 'popular_articles', 'recent_articles', 'changed_articles'), $data);
     }
 
     public function user(User $user){
