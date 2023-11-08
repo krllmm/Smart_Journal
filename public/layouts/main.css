@@ -159,3 +159,7 @@ dialog button{
     color: white;
     padding: 0 6px;
 }
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.85);
+}

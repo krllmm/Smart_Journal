@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="stylesheet" href="{{ asset('style.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Carter+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <title>Smart Journal</title>
@@ -14,7 +14,6 @@
 <body>
 
     <header>
-        <img src="{{ asset('images/header.jpg') }}">
         <nav>
             <ul>
                 <li>
@@ -40,13 +39,13 @@
             section
         </section>
 
-        <article>
+        {{-- <article>
             article
         </article>
 
         <summary>
             summary
-        </summary>
+        </summary> --}}
     </main>
 
     <footer>

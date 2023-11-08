@@ -109,64 +109,6 @@
 
             </div>
 
-
-            {{-- <div class="menu_icon p-0">
-                <button onclick="show_dropdown()">
-                    <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true">
-                        <path d="M1 2.75A.75.75 0 0 1 1.75 2h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 2.75Zm0 5A.75.75 0 0 1 1.75 7h12.5a.75.75 0 0 1 0 1.5H1.75A.75.75 0 0 1 1 7.75ZM1.75 12h12.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5Z" fill="#656c76"></path>
-                    </svg>
-                </button>
-
-                <div id="dropdown">
-                    <ul>
-                        <li>
-                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.31 1.776a1 1 0 0 1 1.38 0l8 7.619 2.5 2.38a1 1 0 0 1-1.38 1.45l-.81-.773V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7.548l-.81.772a1 1 0 1 1-1.38-1.448l2.5-2.381 8-7.62zM5 10.548V20h4v-5a3 3 0 1 1 6 0v5h4v-9.452L12 3.88l-7 6.667zM13 20v-5a1 1 0 1 0-2 0v5h2z" fill="#000"/>
-                            </svg>
-                            <a href="{{ route('profile') }}" class="drop_item">Profile</a>
-                        </li>
-                        <li>
-                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 4a1 1 0 0 1 1-1v18a1 1 0 0 1-1-1V4zm3 17V3h11v18H8zm-1 2H6a3 3 0 0 1-3-3V4a3 3 0 0 1 3-3h13a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H7z" fill="#000"/>
-                            </svg>
-                            <a href="{{ route('article.index') }}" class="drop_item">Articles</a>
-                        </li>
-                        <li>
-                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.293 1.293A1 1 0 0 1 10 1h8a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a1 1 0 0 1 .293-.707l6-6zM18 3h-7v5a1 1 0 0 1-1 1H5v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM6.414 7H9V4.414L6.414 7zM7 13a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1z" fill="#000"/>
-                            </svg>
-                            <a href="{{ route('publication') }}" class="drop_item">My work</a>
-                        </li>
-                        <li>
-                            <svg width="42" height="42" viewBox="0 0 24 24" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10 2a1 1 0 0 0-1 1v1.582a7.992 7.992 0 0 0-1.923 1.112l-1.371-.792a1 1 0 0 0-1.366.366l-2 3.464a1 1 0 0 0 .366 1.366l1.37.791a8.062 8.062 0 0 0 0 2.222l-1.37.79a1 1 0 0 0-.366 1.367l2 3.464a1 1 0 0 0 1.366.366l1.371-.792c.581.455 1.228.83 1.923 1.112V21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1.582a7.994 7.994 0 0 0 1.923-1.112l1.371.792a1 1 0 0 0 1.366-.366l2-3.464a1 1 0 0 0-.366-1.366l-1.37-.791a8.063 8.063 0 0 0 0-2.222l1.37-.79a1 1 0 0 0 .366-1.367l-2-3.464a1 1 0 0 0-1.366-.366l-1.371.792A7.993 7.993 0 0 0 15 4.582V3a1 1 0 0 0-1-1h-4zm1 3.29V4h2v1.29a1 1 0 0 0 .715.958 5.993 5.993 0 0 1 2.407 1.392 1 1 0 0 0 1.188.14l1.118-.646 1 1.732-1.117.645a1 1 0 0 0-.473 1.097 6.02 6.02 0 0 1 0 2.784 1 1 0 0 0 .473 1.097l1.117.645-1 1.732-1.119-.646a1 1 0 0 0-1.187.14 5.991 5.991 0 0 1-2.407 1.392 1 1 0 0 0-.715.958V20h-2v-1.29a1 1 0 0 0-.715-.958 5.992 5.992 0 0 1-2.407-1.392 1 1 0 0 0-1.188-.14l-1.118.646-1-1.732 1.117-.645a1 1 0 0 0 .473-1.097 6.02 6.02 0 0 1 0-2.784 1 1 0 0 0-.473-1.097l-1.117-.645 1-1.732 1.118.646a1 1 0 0 0 1.188-.14 5.993 5.993 0 0 1 2.407-1.392A1 1 0 0 0 11 5.29zM10 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm2-4a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" fill="#000"/>
-                            </svg>
-                            <a href="{{ route('settings') }}" class="drop_item">Settings</a>
-                        </li>
-                        @if(Auth::user()->role_id == 1)
-                            <li>
-                                <a href="{{ route('category.index') }}" class="drop_item">Categories</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('tag.index') }}" class="drop_item">Tags</a>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="search_bar">
-                Search articles
-            </div>
-
-            <div class="user_info">
-                <a class="nav-link text-black" href="{{ route('profile') }}"> {{ Auth::user()->login }} </a>
-                {{-- <div class="avatar">
-                    <img src="{{ asset('images/default_profile.png') }}"/>
-                </div>
-            </div> --}}
-
         </header>
 
         <div class="row bottom_row">
