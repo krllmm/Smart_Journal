@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\ArticleHistory;
 use App\Models\Tag;
 use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
@@ -70,35 +71,62 @@ class ArticleController extends Controller
 
     public function update(Request $request, Article $article)
     {
-        $request->validate([
-            'title' => 'string',
-            'content' => 'string',
-            'status' => '',
-            'deadline' => 'date',
-            'category_id' => '',
-            'tags' => '',
-        ]);
-
-        $data = $request->all();
-        $tags = $data['tags'];
-        unset($data['tags']);
-
         $user = Auth::user();
         $userId = $user->id;
+        //dd($article->author->id);
 
-        if($userId == $article->author->id){
+        if($article->author->id == $userId){
+            $request->validate([
+                'title' => 'string',
+                'content' => 'string',
+                'status' => '',
+                'deadline' => 'date',
+                'category_id' => '',
+                'tags' => '',
+            ]);
+
+            $data = $request->all();
+            $tags = $data['tags'];
+            unset($data['tags']);
+
+            $user = Auth::user();
+            $userId = $user->id;
+
+            if($userId == $article->author->id){
+                $article->update($data);
+                $article->tags()->sync($tags);
+
+                return redirect()->route('article.index');
+            }
+
             $article->update($data);
             $article->tags()->sync($tags);
 
-            return redirect()->route('article.index');
+            $article->Co_authors()->attach($userId);
+        }else{
+            $data = $request->validate([
+                'content' => 'string',
+                'comment' => 'string',
+            ]);
+
+            $data['status'] = $article->status;
+            $data['article_id'] = $article->id;
+            $data['user_id'] = $userId;
+
+            //$article->content = $request['content'];
+
+            $newStatus = [
+                'status' => 'Changed'
+            ];
+            $article->update($newStatus);
+
+            //dd($data, $article->content, $article->status);
+
+            ArticleHistory::create($data);
+
         }
 
-        $article->update($data);
-        $article->tags()->sync($tags);
-
-        $article->Co_authors()->attach($userId);
-
-        return redirect()->route('article.index');
+        return redirect()->route('article.show', $article->id);
     }
 
     public function destroy(Article $article)

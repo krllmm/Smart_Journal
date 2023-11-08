@@ -89,10 +89,17 @@
                     <dialog>
                         <div class="head">Mail box</div>
 
-                            @if (!$changed_articles)
+                            @if ($changed_articles)
                                 @foreach ($changed_articles as $article)
                                     <div>
-                                        {{ $article->title }}
+                                        {{ $article->title }} <strong> was changed at </strong>
+
+                                        @foreach ($article->history as $history)
+                                            <span> {{ $history->created_at }} </span>
+                                            <strong> by user </strong>
+                                            <span> {{ $history->user_id }} </span>
+                                        @endforeach
+
                                     </div>
                                 @endforeach
                             @else

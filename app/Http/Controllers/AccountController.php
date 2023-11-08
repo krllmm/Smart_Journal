@@ -23,6 +23,7 @@ class AccountController extends Controller
             'login' => 'string',
             'password' => 'string',
         ]);
+        $data['role_id'] = 2;
 
         User::create($data);
         return redirect()->route('main');

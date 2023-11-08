@@ -9,6 +9,9 @@
     <div>title: {{ $article->title }}</div>
     <div>content: {{ $article->content}}</div>
     <div>category: {{ $article->category->category }}</div>
+    <div>
+        Status: {{ $article->status }}
+    </div>
 
     <div>original author: {{ $article->author->login }}</div>
     <div><br>tags:
@@ -34,5 +37,13 @@
     </div>
     <div>
         <a href="{{ route('download', $article->id) }}">download</a> .docx file
+    </div>
+    <div>
+        --------------
+    </div>
+    <div>history:
+        @foreach ($article->history as $history)
+            <div>{{ $history->content }}, {{ $history->created_at }}</div>
+        @endforeach
     </div>
 @endsection

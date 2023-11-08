@@ -11,22 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
+        Schema::create('article_history', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-
-            $table->string('title');
             $table->string('content');
+            $table->string('comment');
+            $table->string('status');
 
-            $table->string('title_latin')->default('no_title');
-            // , ['producing', 'published', 'submitted', 'accepted'] такие будут статусы
-            $table->string('status')->default('To-do');
-            $table->date('deadline');
-
-            $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories');
-
-            $table->integer('rating')->default(0);
+            $table->unsignedBigInteger('article_id');
+            $table->foreign('article_id')
+                    ->references('id')->on('articles')
+                    ->onDelete('cascade');
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
@@ -42,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('article_history');
     }
 };

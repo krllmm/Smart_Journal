@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
@@ -33,6 +34,10 @@ class Article extends Model
 
     public function Co_authors(){
         return $this->belongsToMany(User::class, 'article_coauthor', 'article_id', 'user_id');
+    }
+
+    public function history(){
+        return $this->hasMany(ArticleHistory::class);
     }
 
     public function scopeRecentActivity(Builder $query): void
