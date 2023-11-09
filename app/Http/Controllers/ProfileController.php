@@ -31,6 +31,9 @@ class ProfileController extends Controller
                 case "Changed":
                     $color = 'rgba(0, 255, 255, .5)';
                     break;
+                case "Approved":
+                    $color = 'rgba(255, 0, 255, .5)';
+                    break;
             }
 
             $events[] = [
@@ -38,7 +41,6 @@ class ProfileController extends Controller
                 'start' => $article->deadline,
                 'backgroundColor' => $color,
             ];
-
         }
 
         $data = [
@@ -53,8 +55,6 @@ class ProfileController extends Controller
 
         //возвращает статьи пользователя, которые были изменены другими пользователями
         $changed_articles = Article::where('user_id', $user->id)->where('status', 'Changed')->get();
-
-        //dd($changed_articles[0]->history);
 
         return view('profile.index', compact('user', 'popular_articles', 'recent_articles', 'changed_articles'), $data);
     }
