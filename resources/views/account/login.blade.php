@@ -18,9 +18,9 @@
             <div class="header">
                 Smart Jounral
             </div>
-            <div class="header">
+            {{-- <div class="header">
                 Login
-            </div>
+            </div> --}}
 
             <div class="form_container">
                 <form action="{{ route('sign_in') }}">
@@ -42,10 +42,10 @@
 
                     <button type="submit">log in</button>
                 </form>
+                <div class="link">
+                    Don't have an account yet? <a href="{{ route('register') }}">Register</a>
+                </div>
             </div>
-        </div>
-        <div class="login_image">
-            <img src="{{ asset('images/bg.jpeg') }}"/>
         </div>
     </div>
 </body>

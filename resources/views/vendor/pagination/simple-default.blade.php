@@ -4,19 +4,16 @@
         flex-direction: row;
         font-size: 1.5rem;
     }
-    .next{
+    .next_link{
         margin-left: auto;
     }
-    .next a{
+    .next_link a{
         color: white;
         text-decoration: none;
     }
-    ul{
-        padding: 0;
-        margin: 0;
-    }
-    ul li a{
-        line-height: 1.5rem;
+    .prev_link a{
+        color: white;
+        text-decoration: none;
     }
     .disabled{
         opacity: 0.6;
@@ -27,16 +24,16 @@
     <nav>
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <div class="disabled prev" aria-disabled="true"><span>@lang('pagination.previous')</span></div>
+            <div class="disabled prev_link" aria-disabled="true"><span>@lang('pagination.previous')</span></div>
         @else
-            <div class="prev"><a href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a></div>
+            <div class="prev_link"><a href="{{ $paginator->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a></div>
         @endif
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <div class="next"><a href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></div>
+            <div class="next_link"><a href="{{ $paginator->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></div>
         @else
-            <div class="disabled next" aria-disabled="true"><span>@lang('pagination.next')</span></div>
+            <div class="disabled next_link" aria-disabled="true"><span>@lang('pagination.next')</span></div>
         @endif
     </nav>
 @endif

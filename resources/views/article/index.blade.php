@@ -30,8 +30,8 @@
                     <div id="username">{{ $article->author->name }} {{ $article->author->surname }}</div>
                     <a href="{{ route('article.show', $article->id) }}">{{ $article->title }}</a>
                     <div class="options">
-                        <div id="date">{{ $article->category->category }} <span>&#x2022;</span>
-                                       {{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
+                        <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
+                                       {{ $article->category->category }} <span>&#x2022;</span>
                                        {{ $article->rating }} points</div>
                         <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
                     </div>

@@ -24,32 +24,35 @@
             <div class="form_container">
                 <form action="{{ route('create_account') }}" method="POST">
                     @csrf
-                    <div>
-                        <label>Name</label>
-                        <input type="text" name="name" required>
-                    </div>
+                    <div class="name">
+                        <div>
+                            <label>Name</label>
+                            <input type="text" name="name" required>
+                        </div>
 
-                    <div>
-                        <label>Surname</label>
-                        <input type="text" name="surname" required>
+                        <div>
+                            <label>Surname</label>
+                            <input type="text" name="surname" required>
+                        </div>
                     </div>
+                    <div class="login">
+                        <div>
+                            <label>Login</label>
+                            <input type="text" name="login" required>
+                        </div>
 
-                    <div>
-                        <label>Login</label>
-                        <input type="text" name="login" required>
-                    </div>
-
-                    <div>
-                        <label>Password</label>
-                        <input type="password" name="password" required>
+                        <div>
+                            <label>Password</label>
+                            <input type="password" name="password" required>
+                        </div>
                     </div>
 
                     <button type="submit">Register</button>
                 </form>
+                <div class="link">
+                    Already have an account? <a href="{{ route('login') }}">Log in</a>
+                </div>
             </div>
-        </div>
-        <div class="register_image">
-            <img src="{{ asset('images/bg.jpeg') }}"/>
         </div>
     </div>
 </body>
