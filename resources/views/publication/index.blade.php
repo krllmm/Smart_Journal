@@ -16,6 +16,25 @@
                     <a href="{{ route('article.create') }}">Create article</a>
                 </div>
             @else
+                <div>
+                    You already wrote {{ count($articles) }} articles!
+                </div>
+
+                <div class="indicators">
+                    <div id="indicator">
+                        By rating
+                    </div>
+                    <div id="indicator">
+                        Changed
+                    </div>
+                    <div id="indicator">
+                        Oldest
+                    </div>
+                    <div id="indicator">
+                        Latest
+                    </div>
+                </div>
+
                 @foreach ($articles as $article)
                     <div class="article_card">
                         <div class="card_info">
@@ -39,6 +58,8 @@
             @endif
 
         </div>
+        <footer>
+            Powered by Laravel 10
+        </footer>
     </div>
-
 @endsection

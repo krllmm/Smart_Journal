@@ -61,8 +61,8 @@
                 </div>
 
                 <div class="search_bar">
-                    <form>
-                        <input type="text" placeholder="Search articles">
+                    <form action="{{ route('search') }}" method="GET">
+                        <input type="text" placeholder="Search articles" name="user_request">
                         <button type="submit">
                             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm-7 5a7 7 0 1 1 12.606 4.192l5.101 5.1a1 1 0 0 1-1.414 1.415l-5.1-5.1A7 7 0 0 1 3 10z" fill="#656c76"/></svg>
                         </button>
@@ -89,7 +89,7 @@
                     <dialog>
                         <div class="head">Mail box</div>
 
-                            @if ($changed_articles)
+                            @if (count($changed_articles) != 0)
                                 @foreach ($changed_articles as $article)
                                     <div>
                                         {{ $article->title }} <strong> was changed at </strong>
@@ -107,6 +107,29 @@
                             @endif
 
                         <button close-message-box>Close</button>
+                    </dialog>
+
+                    <button open-trash-box>
+                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1h4a1 1 0 1 1 0 2h-1v10a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8H5a1 1 0 0 1 0-2h4V5zm1 3H8v10a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8h-6zm3-2h-2V5h2v1zm-3 3a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0v-7a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0v-7a1 1 0 0 1 1-1z" fill="#656c76"/>
+                        </svg>
+                    </button>
+
+                    <dialog class="trashcan">
+                        <div class="head">Deleted articles</div>
+
+                            @if (count($deleted_articles) != 0)
+                                @foreach ($deleted_articles as $article)
+                                    <div>
+                                        {{ $article->title }} <strong> was deleted at </strong>
+                                        {{ $article->deleted_at }}
+                                    </div>
+                                @endforeach
+                            @else
+                                <div>Looks like your trash can is empty</div>
+                            @endif
+
+                        <button close-trash-box>Close</button>
                     </dialog>
                 @endif
 

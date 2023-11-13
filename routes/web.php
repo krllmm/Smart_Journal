@@ -23,4 +23,6 @@ Route::get('/settings', [SettingsController::class, 'index'])->name('settings')-
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile')->middleware('auth');
 Route::get('/profile/edit/{user}', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
-Route::get('/profile/{user}', [ProfileController::class, 'user'])->name('user')->middleware('auth');
+Route::get('/profile/{$user->login}', [ProfileController::class, 'user'])->name('user')->middleware('auth');
+
+Route::get('/search', [SearchController::class, 'index'])->name('search')->middleware('auth');

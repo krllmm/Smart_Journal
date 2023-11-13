@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('article_history', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('content');
+            $table->text('content');
             $table->string('comment');
             $table->string('status');
 

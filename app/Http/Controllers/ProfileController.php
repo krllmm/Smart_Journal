@@ -56,7 +56,10 @@ class ProfileController extends Controller
         //возвращает статьи пользователя, которые были изменены другими пользователями
         $changed_articles = Article::where('user_id', $user->id)->where('status', 'Changed')->get();
 
-        return view('profile.index', compact('user', 'popular_articles', 'recent_articles', 'changed_articles'), $data);
+        //возвращает статьи пользователя, которые были удалены
+        $deleted_articles = Article::where('user_id', $user->id)->onlyTrashed()->get();
+
+        return view('profile.index', compact('user', 'popular_articles', 'recent_articles', 'changed_articles', 'deleted_articles'), $data);
     }
 
     public function user(User $user){

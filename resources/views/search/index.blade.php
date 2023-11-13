@@ -1,27 +1,14 @@
-<link href="{{ asset('_article/index.css') }}" rel="stylesheet">
+<link href="{{ asset('_search/index.css') }}" rel="stylesheet">
 @extends('layouts.main')
 @section('title')
-    Articles
+    Search
 @endsection
 
 @section('content')
     <div class="content-container">
-        <div class="head">Articles</div>
+        <div class="head">Результат по запросу: {{ $input }}</div>
 
-        <div class="indicators">
-            <div id="indicator">
-                By rating
-            </div>
-            <div id="indicator">
-                {{-- последние получившие статус Done --}}
-                Latest
-            </div>
-            <div id="indicator">
-                Oldest
-            </div>
-        </div>
-
-        @foreach ($articles as $article)
+        @foreach ($response as $article)
             <div class="article_card">
                 <div class="card_avatar">
                     <img src="{{ $article->author->profile_picture }}" alt="image not available">
@@ -36,16 +23,8 @@
                         <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
                     </div>
                 </div>
-
-                {{--<form action="{{ route('article.destroy', $article->id) }}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit">delete</button>
-                </form> --}}
             </div>
         @endforeach
-
-        {{ $articles->links('vendor.pagination.simple-default') }}
     </div>
 
     <footer>

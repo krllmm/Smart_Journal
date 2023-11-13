@@ -16,3 +16,16 @@ openButton.addEventListener("click", ()=>{
 closeButton.addEventListener("click", ()=>{
    dialog.close();
 });
+
+
+const openButtontrash = document.querySelector("[open-trash-box");
+const closeButtontrash = document.querySelector("[close-trash-box");
+const dialogtrash = document.querySelector(".trashcan");
+
+openButtontrash.addEventListener("click", ()=>{
+    dialogtrash.showModal();
+});
+
+closeButtontrash.addEventListener("click", ()=>{
+   dialogtrash.close();
+});
