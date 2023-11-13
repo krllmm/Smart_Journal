@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('title');
-            $table->string('content');
+            $table->text('content');
 
             $table->string('title_latin')->default('no_title');
             // , ['producing', 'published', 'submitted', 'accepted'] такие будут статусы

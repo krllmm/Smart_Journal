@@ -63,7 +63,7 @@
                             <tbody class="tbody">
                                 @foreach($popular_articles as $article)
                                     <tr class="tr">
-                                        <td class="td">
+                                        <td class="td td_title">
                                             {{ $article->title }}
                                             {{-- <a href="{{ route('article.edit', $article->id) }}">
                                                 <svg id="edit_icon" width="14" height="14" viewBox="0 0 24 24">
@@ -107,7 +107,7 @@
                         <tbody class="tbody">
                             @foreach($recent_articles as $article)
                                     <tr class="tr">
-                                        <td class="td">{{ $article->title }}</td>
+                                        <td class="td td_title">{{ $article->title }}</td>
                                         <td class="td">{{ $article->deadline }}</td>
                                         <td class="td">{{ $article->category->category }}</td>
                                         <td class="td">
