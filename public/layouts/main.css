@@ -111,7 +111,7 @@ form{
     gap: 12px;
 }
 
-form input{
+form .search{
     border-radius: 8px;
     border: 1px solid #656c76;
     background: transparent;

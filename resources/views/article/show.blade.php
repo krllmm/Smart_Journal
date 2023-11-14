@@ -1,49 +1,60 @@
+<link rel="stylesheet" href="{{ asset('_article/show.css') }}">
 @extends('layouts.main')
 @section('title')
     Article {{ $article->id }}
 @endsection
 
 @section('content')
-    <div>Article {{ $article->id }}</div>
-    <div>id in database: {{ $article->id }}</div>
-    <div>title: {{ $article->title }}</div>
-    <div>content: {{ $article->content}}</div>
-    <div>category: {{ $article->category->category }}</div>
-    <div>
-        Status: {{ $article->status }}
+    <div class="details">
+        @if (Auth::user()->id == $article->author->id)
+            <div class="header">
+                {{ $article->title }}
+            </div>
+
+            <div class="indicators">
+                @foreach ($article->tags as $tag)
+                    <div id="indicator">{{ $tag->title }}</div>
+                @endforeach
+            </div>
+
+            <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
+                           {{ $article->category->category }} <span>&#x2022;</span>
+                           {{ $article->rating }} points
+            </div>
+            <hr>
+
+
+
+            <div class="content">
+                {{ $article->content }}
+            </div>
+
+            {{-- <div>
+            Status: {{ $article->status }}
+        </div> --}}
+
+
+            {{-- <div>co authors:
+            @foreach ($article->Co_authors as $coa)
+                <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
+            @endforeach
+        </div> --}}
+            <div>
+                <a href="{{ route('download', $article->id) }}">download</a> .docx file
+            </div>
+
+            {{-- <div>history:
+            @foreach ($article->history as $history)
+                <div>{{ $history->content }}, {{ $history->created_at }}</div>
+            @endforeach
+        </div> --}}
+        @else
+
+        @endif
     </div>
 
-    <div>original author: {{ $article->author->login }}</div>
-    <div><br>tags:
-        @foreach ($article->tags as $tag)
-            <p>{{ $tag->title }}</p>
-        @endforeach
-    </div>
+    <footer>
+        Powered by Laravel 10
+    </footer>
 
-    <div>co authors:
-        @foreach ($article->Co_authors as $coa)
-            <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
-        @endforeach
-    </div>
-
-    <div>
-        --------------
-    </div>
-    <div>
-        <a href="{{ route('article.edit', $article->id) }}">edit</a>
-    </div>
-    <div>
-        --------------
-    </div>
-    <div>
-        <a href="{{ route('download', $article->id) }}">download</a> .docx file
-    </div>
-    <div>
-        --------------
-    </div>
-    <div>history:
-        @foreach ($article->history as $history)
-            <div>{{ $history->content }}, {{ $history->created_at }}</div>
-        @endforeach
-    </div>
 @endsection

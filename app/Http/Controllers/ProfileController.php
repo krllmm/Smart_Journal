@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Article;
+use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
@@ -68,5 +69,13 @@ class ProfileController extends Controller
 
     public function edit(User $user){
         return view('profile.edit', compact('user'));
+    }
+
+    public function update(Request $request, User $user){
+        $data = $request->validate([
+            '' => ''
+        ]);
+        dd($data);
+        return view('profile', compact('user'));
     }
 }

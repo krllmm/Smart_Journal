@@ -62,7 +62,7 @@
 
                 <div class="search_bar">
                     <form action="{{ route('search') }}" method="GET">
-                        <input type="text" placeholder="Search articles" name="user_request">
+                        <input type="text" placeholder="Search articles" name="user_request" class="search">
                         <button type="submit">
                             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm-7 5a7 7 0 1 1 12.606 4.192l5.101 5.1a1 1 0 0 1-1.414 1.415l-5.1-5.1A7 7 0 0 1 3 10z" fill="#656c76"/></svg>
                         </button>

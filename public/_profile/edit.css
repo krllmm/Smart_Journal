@@ -1,0 +1,52 @@
+.info{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.info div{
+    display: flex;
+    flex-direction: column;
+}
+
+.socials{
+    gap: .5rem;
+}
+
+label{
+    margin: .8rem 0 .4rem 0;
+}
+
+input{
+    border-radius: 8px;
+    font-size: 1.2rem;
+    border: 1px solid #656c76;
+    background: transparent;
+    color: white;
+    padding: 6px;
+}
+
+textarea{
+    background: transparent;
+    border: 1px solid #656c76;
+    border-radius: 8px;
+    color: white;
+    padding: .6rem;
+}
+
+.save{
+    background: transparent;
+    border: 1px solid #656c76;
+    background-color: rgb(35, 199, 35, .6);
+    color: white;
+    padding: 6px;
+}
+
+
+footer{
+    height: 60px;
+    border-top: 1px solid #656c76;
+    margin-top: 2rem;
+    line-height: 60px;
+}
