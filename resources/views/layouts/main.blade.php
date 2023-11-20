@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
     <link rel="stylesheet" href="{{ asset('layouts/main.css') }}">
 
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+
     <script src="{{ asset('build/assets/app.js') }}" defer></script>
     <script src="{{ asset('js/main.js') }}" defer></script>
 
