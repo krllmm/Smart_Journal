@@ -1,15 +1,13 @@
 <?php
-
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'index')->name('main');
-Route::view('/home', 'layouts.main')->name('home');
 
 Route::resource('tag', TagController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
-
 Route::resource('article', ArticleController::class)->middleware('auth');
+
 Route::get('download/{article}', [DownloadController::class, 'download'])->name('download');
 
 Route::get('/login', [AccountController::class, 'index'])->name('login');

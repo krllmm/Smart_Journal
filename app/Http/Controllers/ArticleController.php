@@ -117,5 +117,4 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('article.index');
     }
-
 }
