@@ -36,7 +36,8 @@
 
     <main>
         <section>
-            section
+            <img src="{{ asset("images/stack-of-books(1).png") }}">
+            <div class="headline">Discover new</div>
         </section>
 
         {{-- <article>
