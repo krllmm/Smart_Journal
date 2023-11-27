@@ -63,14 +63,7 @@
                             <tbody class="tbody">
                                 @foreach($popular_articles as $article)
                                     <tr class="tr">
-                                        <td class="td td_title">
-                                            {{ $article->title }}
-                                            {{-- <a href="{{ route('article.edit', $article->id) }}">
-                                                <svg id="edit_icon" width="14" height="14" viewBox="0 0 24 24">
-                                                    <path fill="#fff" d="M 19.171875 2 C 18.448125 2 17.724375 2.275625 17.171875 2.828125 L 16 4 L 20 8 L 21.171875 6.828125 C 22.275875 5.724125 22.275875 3.933125 21.171875 2.828125 C 20.619375 2.275625 19.895625 2 19.171875 2 z M 14.5 5.5 L 3 17 L 3 21 L 7 21 L 18.5 9.5 L 14.5 5.5 z"></path>
-                                                </svg>
-                                            </a> --}}
-                                        </td>
+                                        <td class="td td_title">{{ $article->title }}</td>
                                         <td class="td">{{ $article->deadline }}</td>
                                         <td class="td">{{ $article->category->category }}</td>
                                         <td class="td">
@@ -92,20 +85,21 @@
                 </div>
                 <div>
                     <h2>Your recent activity(2 weeks)</h2>
-                    <table class="article_table">
-                        <thead class="thead">
-                            <tr class="tr_head">
-                                <th class="column1">Title</th>
-                                <th class="column3">Deadline</th>
-                                <th class="column4">Category</th>
-                                <th class="column5">Tags</th>
-                                <th class="column6">Status</th>
-                                <th class="column7">Created at</th>
-                                <th class="column8">Last update</th>
-                            </tr>
-                        </thead>
-                        <tbody class="tbody">
-                            @foreach($recent_articles as $article)
+                    @if(count($recent_articles) != 0)
+                        <table class="article_table">
+                            <thead class="thead">
+                                <tr class="tr_head">
+                                    <th class="column1">Title</th>
+                                    <th class="column2">Deadline</th>
+                                    <th class="column3">Category</th>
+                                    <th class="column4">Tags</th>
+                                    <th class="column5">Status</th>
+                                    <th class="column6">Created at</th>
+                                    <th class="column7">Last update</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody">
+                                @foreach($recent_articles as $article)
                                     <tr class="tr">
                                         <td class="td td_title">{{ $article->title }}</td>
                                         <td class="td">{{ $article->deadline }}</td>
@@ -128,8 +122,11 @@
                                         @endif
                                     </tr>
                                 @endforeach
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    @else
+                        <div class="recent">You have no recent activities</div>
+                    @endif
 
                 </div>
 

@@ -65,14 +65,14 @@ section .container{
     width: 80%;
     margin: 0 auto;
     display: flex;
-    padding: 5rem 0;
+    padding: 5rem 0 6rem 0;
 }
 
 .container div{
     display: flex;
     flex-direction: column;
-    margin-left: 3rem;
-    margin-top: 2.5rem;
+    margin-left: auto;
+    margin-top: 3rem;
     align-items: end;
 }
 
@@ -135,7 +135,7 @@ article{
     background-color: #0d1117;
     width: 100%;
     clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
-    margin-top: -40px;
+    margin-top: -30px;
     height: 520px;
 }
 
@@ -144,6 +144,8 @@ article div{
     margin: 0 auto;
     padding-top: 2rem;
 }
+
+
 
 
 
