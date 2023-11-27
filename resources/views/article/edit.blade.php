@@ -21,8 +21,7 @@
 
             <div>
                 <label for="content">Content</label>
-                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here"
-                    value="{{ $article->content }}"></textarea>
+                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here">{{ $article->content }}</textarea>
             </div>
 
             <div>

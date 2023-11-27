@@ -9,14 +9,14 @@
         <div class="head">My articles</div>
 
             @if (count($articles) == 0)
-                <div>
+                <div class="message">
                     Oops, looks like you haven`t got any articles done
                 </div>
                 <div>
                     <a href="{{ route('article.create') }}">Create article</a>
                 </div>
             @else
-                <div>
+                <div class="message">
                     You already wrote {{ count($articles) }} articles!
                 </div>
 

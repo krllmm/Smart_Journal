@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="details">
-        @if (Auth::user()->id == $article->author->id)
+        {{-- @if (Auth::user()->id == $article->author->id) --}}
             <div class="header">
                 {{ $article->title }}
             </div>
@@ -34,23 +34,23 @@
         </div> --}}
 
 
-            {{-- <div>co authors:
+            <div>co authors:
             @foreach ($article->Co_authors as $coa)
                 <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
             @endforeach
-        </div> --}}
+        </div>
             <div>
                 <a href="{{ route('download', $article->id) }}">download</a> .docx file
             </div>
 
-            {{-- <div>history:
+             <div>history:
             @foreach ($article->history as $history)
                 <div>{{ $history->content }}, {{ $history->created_at }}</div>
             @endforeach
-        </div> --}}
-        @else
+        </div>
+        {{-- @else --}}
 
-        @endif
+        {{-- @endif --}}
     </div>
 
     <footer>

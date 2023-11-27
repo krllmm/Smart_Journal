@@ -36,15 +36,30 @@
 
     <main>
         <section>
-            <img src="{{ asset("images/stack-of-books(1).png") }}">
-            <div class="headline">Discover new</div>
+            <div class="container">
+                <img src="{{ asset("images/stack-of-books.png") }}">
+                <div>
+                    <div class="headline">Discover</div>
+                    <div class="line">Follow new ideas</div>
+                    <div class="buttons">
+                        <ul>
+                            <li>
+                                <a href="{{ route('login') }}">Login</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('register') }}">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        {{-- <article>
-            article
+        <article>
+            <div>article</div>
         </article>
 
-        <summary>
+        {{--<summary>
             summary
         </summary> --}}
     </main>
