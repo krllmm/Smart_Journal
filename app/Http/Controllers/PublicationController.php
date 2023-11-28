@@ -11,7 +11,6 @@ class PublicationController extends Controller
 {
     public function index(){
         $articles = Article::where('user_id', Auth::user()->id)->paginate(5);
-        //dd(count($articles));
         return view('publication.index', compact('articles'));
     }
 }
