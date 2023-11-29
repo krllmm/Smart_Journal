@@ -33,15 +33,11 @@
                         <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
                                        {{ $article->category->category }} <span>&#x2022;</span>
                                        {{ $article->rating }} points</div>
-                        <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
+                        @if($article->author->id != Auth::user()->id)
+                            <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
+                        @endif
                     </div>
                 </div>
-
-                {{--<form action="{{ route('article.destroy', $article->id) }}" method="post">
-                    @csrf
-                    @method('delete')
-                    <button type="submit">delete</button>
-                </form> --}}
             </div>
         @endforeach
 
@@ -49,6 +45,6 @@
     </div>
 
     <footer>
-        Powered by Laravel 10
+        Smart Journal <span>&#x2022;</span> Powered by Laravel 10
     </footer>
 @endsection
