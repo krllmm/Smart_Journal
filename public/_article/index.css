@@ -16,10 +16,12 @@
 }
 
 #indicator{
+    border: none;
+    color: #000;
     background-color: #3dae98;
     border-radius: 6px;
     font-size: 1rem;
-    padding: 2px 6px;
+    padding: 2px 12px;
     display: flex;
     align-items: center;
     gap: 4px;
