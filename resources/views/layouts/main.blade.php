@@ -75,8 +75,10 @@
             <div class="header-end">
                 <a href="{{ route('article.create') }}">
                     <button>
-                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true" >
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.293 1.293A1 1 0 0 1 10 1h8a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V8a1 1 0 0 1 .293-.707l6-6zM18 3h-7v5a1 1 0 0 1-1 1H5v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM6.414 7H9V4.414L6.414 7zM7 13a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h8a1 1 0 1 1 0 2H8a1 1 0 0 1-1-1z" fill="#656c76"/>
+                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true">
+                            <path d="M18,1h-8C9.7,1,9.5,1.1,9.3,1.3l-6,6C3.1,7.5,3,7.7,3,8v12c0,1.7,1.3,3,3,3h12c1.7,0,3-1.3,3-3V4C21,2.3,19.7,1,18,1z M9,4.4V7H6.4L9,4.4z M19,20c0,0.6-0.4,1-1,1H6c-0.6,0-1-0.4-1-1V9h5c0.6,0,1-0.4,1-1V3h7c0.6,0,1,0.4,1,1V20z" fill="#656c76"/>
+                            <path d="M11.2,10.8l0,6.4c0,0.4,0.4,0.8,0.8,0.8c0.4,0,0.8-0.4,0.8-0.8l0-6.4c0-0.4-0.4-0.8-0.8-0.8C11.6,10,11.2,10.4,11.2,10.8z" fill="#656c76"/>
+                            <path d="M15.2,13.2H8.8C8.4,13.2,8,13.6,8,14c0,0.4,0.4,0.8,0.8,0.8h6.4c0.4,0,0.8-0.4,0.8-0.8C16,13.6,15.6,13.2,15.2,13.2z" fill="#656c76"/>
                         </svg>
                     </button>
                 </a>

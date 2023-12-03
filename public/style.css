@@ -58,14 +58,14 @@ main{
 section{
     background-color: #0d1117;
     color: white;
-    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 50px));
+    clip-path: polygon(0 0,100% 0,100% 100%,0 calc(100% - 100px));
 }
 
 section .container{
     width: 80%;
     margin: 0 auto;
     display: flex;
-    padding: 5rem 0 6rem 0;
+    padding: 5rem 0 10rem 0;
 }
 
 .container div{
@@ -89,12 +89,13 @@ section .container{
 .buttons li{
     border: 1px solid #fff;
     border-radius: .5rem;
-    padding: 3px 8px;
+    padding: 3px 16px;
     cursor: pointer;
 }
 
 section img{
-    animation: movement 8s ease infinite;
+    transform: scale(1.2);
+    /* animation: movement 8s ease infinite; */
     z-index: 5;
 }
 
@@ -134,15 +135,15 @@ article{
     color: #fff;
     background-color: #0d1117;
     width: 100%;
-    clip-path: polygon(0 0,100% 50px,100% 100%,0 100%);
-    margin-top: -30px;
-    height: 520px;
+    clip-path: polygon(0 0,100% 100px,100% 100%,0 100%);
+    margin-top: -70px;
+    height: 720px;
 }
 
 article div{
     width: 80%;
     margin: 0 auto;
-    padding-top: 2rem;
+    padding-top: 100px;
 }
 
 

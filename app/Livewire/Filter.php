@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Livewire;
 
+use Livewire\WithPagination;
 use App\Models\Article;
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 
 class Filter extends Component
 {
+    use WithPagination;
 
     public $prop;
     public $way;
@@ -28,7 +30,10 @@ class Filter extends Component
 
     public function render()
     {
-        $this->prop ? $articles = Article::orderBy($this->prop, $this->way)->paginate(10) : $articles = Article::paginate(10);
+        $user = Auth::user();
+        $this->prop
+                ? $articles = Article::whereNot('user_id', $user->id)->orderBy($this->prop, $this->way)->paginate(10)
+                : $articles = Article::whereNot('user_id', $user->id)->paginate(10);
         return view('livewire.filter', compact('articles'));
     }
 }

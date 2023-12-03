@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class Article extends Model
 {
@@ -49,5 +50,4 @@ class Article extends Model
               ->orderBy('created_at', 'desc')
               ->orderBy('updated_at', 'desc');
     }
-
 }

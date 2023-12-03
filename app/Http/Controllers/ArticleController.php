@@ -13,8 +13,9 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::paginate(10);
-        return  view('article.index', compact('articles'));
+        // $user = Auth::user();
+        // $articles = Article::whereNot('user_id', $user->id)->paginate(10);
+        return  view('article.index');
     }
 
     public function create()

@@ -11,17 +11,17 @@
 
         <div>
             <label for="name">Name</label>
-            <input name="name" type="text" autocomplete="off" placeholder="Your name" value="{{ $user->name }}">
+            <input name="name" type="text" autocomplete="off" placeholder="Your name" value="{{ $user->name }}" class="input">
         </div>
 
         <div>
             <label for="surname">Surname</label>
-            <input name="surname" type="text" autocomplete="off" placeholder="Your surname" value="{{ $user->surname }}">
+            <input name="surname" type="text" autocomplete="off" placeholder="Your surname" value="{{ $user->surname }}" class="input">
         </div>
 
         <div>
             <label for="email">Email address</label>
-            <input name="email" type="email" autocomplete="off" placeholder="{{ $user->name }}&#64;gmail.com">
+            <input name="email" type="email" autocomplete="off" placeholder="{{ $user->name }}&#64;gmail.com" class="input">
         </div>
 
         <div>
@@ -31,20 +31,20 @@
 
         <div>
             <label for="country">Country</label>
-            <input name="country" type="text" autocomplete="off" placeholder="Your current location">
+            <input name="country" type="text" autocomplete="off" placeholder="Your current location" class="input">
         </div>
 
         <div>
             <label for="birth">Date of birth</label>
-            <input name="birth" type="date" autocomplete="off">
+            <input name="birth" type="date" autocomplete="off" class="input">
         </div>
 
+        <label class="social_label">Links to your accounts on social media</label>
         <div class="socials">
-            <label for="socials">Links to your accounts on social media</label>
-            <input name="social" type="text" autocomplete="off">
-            <input name="social" type="text" autocomplete="off">
-            <input name="social" type="text" autocomplete="off">
-            <input name="social" type="text" autocomplete="off">
+            <input name="social" type="text" autocomplete="off" class="input">
+            <input name="social" type="text" autocomplete="off" class="input">
+            <input name="social" type="text" autocomplete="off" class="input">
+            <input name="social" type="text" autocomplete="off" class="input">
         </div>
 
         <div>

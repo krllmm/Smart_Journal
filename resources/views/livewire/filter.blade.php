@@ -22,15 +22,13 @@
                 <a href="{{ route('article.show', $article->id) }}">{{ $article->title }}</a>
                 <div class="options">
                     <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
-                                   {{ $article->category->category }} <span>&#x2022;</span>
-                                   {{ $article->rating }} points</div>
-                    @if($article->author->id != Auth::user()->id)
-                        <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
-                    @endif
+                                {{ $article->category->category }} <span>&#x2022;</span>
+                                {{ $article->rating }} points</div>
+                    <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
                 </div>
             </div>
         </div>
     @endforeach
 
-    {{ $articles->links('vendor.pagination.simple-default') }}
+    {{ $articles->links('vendor.pagination.custom-pagination') }}
 </div>

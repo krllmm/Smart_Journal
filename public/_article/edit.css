@@ -20,7 +20,7 @@ label{
     margin: .8rem 0 .4rem 0;
 }
 
-input, select{
+.input, .select{
     border-radius: 8px;
     font-size: 1.2rem;
     border: 1px solid #656c76;
@@ -30,7 +30,7 @@ input, select{
 }
 
 option{
-    color: black;
+    color: white;
 }
 
 .tag{

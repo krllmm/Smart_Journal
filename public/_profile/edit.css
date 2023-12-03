@@ -10,15 +10,20 @@
     flex-direction: column;
 }
 
+.social_label{
+    margin-top: 1rem;
+}
+
 .socials{
-    gap: .5rem;
+    gap: .75rem;
 }
 
 label{
-    margin: .8rem 0 .4rem 0;
+    font-size: 1.1rem;
+    margin: .9rem 0 .3rem 0;
 }
 
-input{
+.input{
     border-radius: 8px;
     font-size: 1.2rem;
     border: 1px solid #656c76;
@@ -42,7 +47,6 @@ textarea{
     color: white;
     padding: 6px;
 }
-
 
 footer{
     height: 60px;

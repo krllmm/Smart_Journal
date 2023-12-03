@@ -16,22 +16,22 @@
             <div>
                 <label for="title">Article title</label>
                 <input name="title" type="text" autocomplete="off" placeholder="Enter article`s title"
-                    value="{{ $article->title }}">
+                    value="{{ $article->title }}" class="input">
             </div>
 
             <div>
                 <label for="content">Content</label>
-                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here">{{ $article->content }}</textarea>
+                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input">{{ $article->content }}</textarea>
             </div>
 
             <div>
                 <label for="deadline">Deadline</label>
-                <input name="deadline" type="date" autocomplete="off" value="{{ $article->deadline }}">
+                <input name="deadline" type="date" autocomplete="off" value="{{ $article->deadline }}" class="input">
             </div>
 
             <div>
                 <label for="status">Status</label>
-                <select type="text" name="status" placeholder="Status">
+                <select type="text" name="status" placeholder="Status" class="select">
                     @foreach ($statuses as $status)
                         <option {{ $status === $article->status ? ' selected' : '' }} value="{{ $status }}">
                             {{ $status }}</option>
@@ -41,7 +41,7 @@
 
             <div>
                 <label for="category_id">Category</label>
-                <select type="text" name="category_id" placeholder="Choose a category">
+                <select type="text" name="category_id" placeholder="Choose a category" class="select">
                     @foreach ($categories as $category)
                         <option {{ $category->id === $article->category->id ? ' selected' : '' }}
                             value="{{ $category->id }}"> {{ $category->category }}</option>
@@ -51,7 +51,7 @@
 
             <div>
                 <label for="tag_id">Tags</label>
-                <select multiple type="text" name="tags[]" placeholder="Choose tags">
+                <select multiple type="text" name="tags[]" placeholder="Choose tags" class="select">
                     @foreach ($tags as $tag)
                         <option
                             @foreach ($article->tags as $articleTag)
@@ -67,12 +67,12 @@
 
             <div>
                 <label for="content">Content</label>
-                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here">{{ $article->content }}</textarea>
+                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input">{{ $article->content }}</textarea>
             </div>
 
             <div>
                 <label for="comment">Comment</label>
-                <input name="comment" type="text" autocomplete="off" placeholder="Your comment">
+                <input name="comment" type="text" autocomplete="off" placeholder="Your comment" class="input">
             </div>
         @endif
 
