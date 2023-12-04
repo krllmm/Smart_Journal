@@ -13,8 +13,8 @@ class CategorySeeder extends Seeder
         Category::create(['category' => 'Engineering']);
         Category::create(['category' => 'Physics']);
         Category::create(['category' => 'Chemistry']);
-        Category::create(['category' => 'Biology']);
         Category::create(['category' => 'Medicine']);
+        Category::create(['category' => 'Biology']);
         Category::create(['category' => 'Language']);
         Category::create(['category' => 'Economics']);
         Category::create(['category' => 'Programming']);

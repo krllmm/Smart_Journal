@@ -22,7 +22,7 @@ class ArticleSeeder extends Seeder
             Article::create([
                 'title' => 'Title ' . $i,
                 'content' => 'Content ' . $i,
-                'deadline' => randomDate('2009-12-10', '2009-12-31'),
+                'deadline' => randomDate('2023-12-10', '2024-06-31'),
                 'category_id' => random_int(1, 9),
                 'user_id' => random_int(1, 11),
                 'rating' => random_int(10, 50),

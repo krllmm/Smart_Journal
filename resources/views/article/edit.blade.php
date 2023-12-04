@@ -61,7 +61,7 @@
                 </select>
             </div>
         @else
-            <div>
+            <div class="header">
                 {{ $article->title }}
             </div>
 
