@@ -29,6 +29,10 @@ label{
     padding: 6px;
 }
 
+.select_category option{
+    color: black;
+}
+
 option{
     color: white;
 }

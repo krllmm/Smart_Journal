@@ -18,9 +18,6 @@
             <div class="header">
                 Smart Jounral
             </div>
-            {{-- <div class="header">
-                Login
-            </div> --}}
 
             <div class="form_container">
                 <form action="{{ route('sign_in') }}">
@@ -28,11 +25,17 @@
                     <div>
                         <label>Login</label>
                         <input type="text" name="login" required>
+                        @if (Session::has('login'))
+                            <div class="error">{{ Session::get('login') }}</div>
+                        @endif
                     </div>
 
                     <div>
                         <label>Password</label>
                         <input type="password" name="password" required>
+                        @if (Session::has('password'))
+                            <div class="error">{{ Session::get('password') }}</div>
+                        @endif
                     </div>
 
                     <div class="remember">

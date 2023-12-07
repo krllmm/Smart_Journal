@@ -103,3 +103,8 @@ button{
 .link a{
     color: white;
 }
+
+.error{
+    font-size: 2rem;
+    color: red;
+}

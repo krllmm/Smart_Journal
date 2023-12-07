@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -43,14 +43,24 @@ class AccountController extends Controller
 
         $remember = ( !empty( $request->remember_me ) )? TRUE : FALSE;
 
+        $user = User::where('login', $data['login'])->first();
+
+        if($user == null){
+            redirect()->back()->with('login', 'no user found');
+        }
+        if($user->password != Hash::make($data['password'])){
+            redirect()->back()->with('password', 'wrong password')->withInput();
+        }
+
         if (Auth::attempt([
             'login' => $request->get('login'),
             'password' => $request->get('password'),
         ], $remember)){
-            return redirect()->route('profile');
+            return redirect()->route('main');
         }
-
-        return redirect()->route('main');
+        else{
+            return redirect()->back()->withInput();
+        }
     }
 
     public function logout()

@@ -41,7 +41,7 @@
 
             <div>
                 <label for="category_id">Category</label>
-                <select type="text" name="category_id" placeholder="Choose a category" class="select">
+                <select type="text" name="category_id" placeholder="Choose a category" class="select select_category">
                     @foreach ($categories as $category)
                         <option {{ $category->id === $article->category->id ? ' selected' : '' }}
                             value="{{ $category->id }}"> {{ $category->category }}</option>
