@@ -7,14 +7,13 @@ use App\Models\Article;
 use App\Models\ArticleHistory;
 use App\Models\Tag;
 use App\Models\Category;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        // $user = Auth::user();
-        // $articles = Article::whereNot('user_id', $user->id)->paginate(10);
         return  view('article.index');
     }
 
@@ -28,17 +27,31 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'string',
-            'content' => 'string',
+            'title' => 'string|required|max:255',
+            'content' => 'string|required',
             'status' => '',
-            'deadline' => 'date',
+            'deadline' => 'date|required',
             'category_id' => '',
             'tags' => '',
-        ]);
+        ], [
+            'title' => 'Title field cannot be empty',
+            'content'  => 'Content field cannot be empty',
+            'dealine' => 'Deadline date field cannot be empty'
+          ]);
+
+
 
         $data = $request->all();
         $tags = $data['tags'];
         unset($data['tags']);
+
+        // $res = Validator::make($data, [
+        //     'title' => 'string|required|max:255',
+        //     'content' => 'string|required',
+        //     'status' => '',
+        //     'deadline' => 'date|required',
+        //     'category_id' => '',
+        // ]);
 
         $user = Auth::user();
         $userId = $user->id;

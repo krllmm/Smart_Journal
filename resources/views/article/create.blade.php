@@ -13,16 +13,25 @@
         <div>
             <label for="title">Article title</label>
             <input name="title" type="text" autocomplete="off" placeholder="Enter article`s title" class="input">
+            @error('title')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <div>
             <label for="content">Content</label>
             <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input"></textarea>
+            @error('content')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <div>
             <label for="deadline">Deadline</label>
             <input name="deadline" type="date" autocomplete="off" class="input">
+            @error('deadline')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <div>
