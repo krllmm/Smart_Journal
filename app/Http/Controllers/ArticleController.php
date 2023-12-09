@@ -37,21 +37,11 @@ class ArticleController extends Controller
             'title' => 'Title field cannot be empty',
             'content'  => 'Content field cannot be empty',
             'dealine' => 'Deadline date field cannot be empty'
-          ]);
-
-
+        ]);
 
         $data = $request->all();
         $tags = $data['tags'];
         unset($data['tags']);
-
-        // $res = Validator::make($data, [
-        //     'title' => 'string|required|max:255',
-        //     'content' => 'string|required',
-        //     'status' => '',
-        //     'deadline' => 'date|required',
-        //     'category_id' => '',
-        // ]);
 
         $user = Auth::user();
         $userId = $user->id;

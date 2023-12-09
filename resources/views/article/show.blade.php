@@ -75,6 +75,7 @@
                     <div>Posted: {{ $article->created_at->format('d.m.Y h:m') }}</div>
                     <div>Category: {{ $article->category->category }}</div>
                     <div>Rating: {{ $article->rating }}</div>
+                    <div>Status: {{ $article->status }}</div>
                 </div>
                 <hr>
 
@@ -82,6 +83,12 @@
                     <div class="caption">With the help of:</div>
                     @foreach ($article->Co_authors as $coa)
                         <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
+                    @endforeach
+                </div>
+                <hr>
+                <div>History:
+                    @foreach ($article->history as $history)
+                        <div>{{ $history->content }}, {{ $history->created_at }}, {{ $history->comment }}</div>
                     @endforeach
                 </div>
                 <hr>
