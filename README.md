@@ -5,6 +5,7 @@ Smart Journal is a web application that makes creating and browsing science arti
 ## Description
 
 This project is term paper project I did in my 3rd year at university. The UI is highly inspired by GitHub and I constantly add new stuff and rework other parts of it. 
+![main_page](https://github.com/krllmm/Smart_Journal/assets/137904300/ec838d23-0876-42aa-80d0-29bc18a0b021)
 
 ## What did I learn
 
