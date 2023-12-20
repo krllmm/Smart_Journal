@@ -41,3 +41,12 @@ The fisrt thing you should do is create an account. After that you are ready to 
 ## License
 
 This project is licensed under the terms of the MIT license.
+
+## To Do
+
+<ul>
+    <li>Add "Decline changes" option</li>
+    <li>Better search</li>
+    <li>New interactive design</li>
+    <li>More distinct division of roles</li>
+</ul>
