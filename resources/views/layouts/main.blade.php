@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
     <link rel="stylesheet" href="{{ asset('layouts/main.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
 

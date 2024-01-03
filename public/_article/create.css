@@ -37,12 +37,16 @@ option{
     color: white;
 }
 
+.select_tags{
+    height: 200px;
+}
+
 .create{
-    background: transparent;
     border: 1px solid #656c76;
     background-color: rgb(35, 199, 35, .6);
     color: white;
     padding: 6px;
+    font-size: 1.2rem;
 }
 
 textarea{
