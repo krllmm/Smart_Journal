@@ -29,14 +29,6 @@ label{
     padding: 6px;
 }
 
-.textarea-content{
-    height: 550px;
-}
-
-.textarea-comment{
-    height: 150px;
-}
-
 .select_category option{
     color: black;
 }
@@ -49,16 +41,12 @@ option{
     color: white;
 }
 
-.select_tags{
-    height: 200px;
-}
-
 .update{
+    background: transparent;
     border: 1px solid #656c76;
     background-color: rgb(35, 199, 35, .6);
     color: white;
     padding: 6px;
-    font-size: 1.2rem;
 }
 
 textarea{

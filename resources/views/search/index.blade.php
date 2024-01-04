@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="content-container">
-        <div class="head">Результат по запросу: "{{ $input }}"</div>
+        <div class="head">Результат по запросу: {{ $input }}</div>
 
         @foreach ($response as $article)
             <div class="article_card">

@@ -55,7 +55,7 @@
 
         <div>
             <label for="tag_id">Tags</label>
-            <select multiple type="text" name="tags[]" placeholder="Choose tags" class="select select_tags">
+            <select multiple type="text" name="tags[]" placeholder="Choose tags" class="select">
                 @foreach ($tags as $tag)
                     <option class="tag" value="{{ $tag->id }}">{{ $tag->title }}</option>
                 @endforeach

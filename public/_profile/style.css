@@ -4,7 +4,6 @@
 
 .main_container{
     padding-top: 24px;
-    font-family: Roboto, serif;
 }
 
 .first_row{
@@ -30,7 +29,6 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    cursor: pointer;
 }
 
 .button{

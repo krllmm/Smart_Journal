@@ -20,10 +20,10 @@
                     <a href="#" class="logo">Smart Journal</a>
                 </li>
                 <li>
-                    <a href="{{ route('login') }}">Вход</a>
+                    <a href="{{ route('login') }}">Login</a>
                 </li>
                 <li>
-                    <a href="{{ route('register') }}">Регистрация</a>
+                    <a href="{{ route('register') }}">Register</a>
                 </li>
                 @if (Auth::check())
                     <li>
@@ -37,18 +37,18 @@
     <main>
         <section>
             <div class="container">
-                <img src="{{ asset("images/books.png") }}">
+                <img src="{{ asset("images/stack-of-books.png") }}">
                 <div>
-                    <div class="headline">исследуйте</div>
-                    <div class="line">следуйте за новым</div>
+                    <div class="headline">Discover</div>
+                    <div class="line">Follow new ideas</div>
                     <div class="buttons">
                         <ul>
                             <li>
-                                <a href="{{ route('login') }}">Войти</a>
+                                <a href="{{ route('login') }}">Login</a>
                             </li>
-{{--                            <li>--}}
-{{--                                <a href="{{ route('register') }}">Регист</a>--}}
-{{--                            </li>--}}
+                            <li>
+                                <a href="{{ route('register') }}">Register</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
         <article>
             <div class="article_container">
                 <div class="learn_text">
-                    <div class="headline">Изучайте</div>
-                    <div class="line">двигайте науку вперед</div>
+                    <div class="headline">Learn new</div>
+                    <div class="line">Make an impact on science</div>
                 </div>
                 <div class="image_container">
                     <img src="{{ asset("images/article.png") }}">
@@ -69,10 +69,10 @@
 
         <summary>
             <div class="summary_container">
-                <div>Начните прямо сейчас</div>
+                <div>Get started now</div>
                 <ul>
                     <li>
-                        <a href="{{ route('register') }}">Создать аккаунт</a>
+                        <a href="{{ route('register') }}">Register</a>
                     </li>
                 </ul>
             </div>
@@ -86,8 +86,8 @@
             </div>
             <div class="subscribe">
                 <form>
-                    <input type="text" placeholder="Адрес вашей почты">
-                    <button type="submit">Подписаться</button>
+                    <input type="text" placeholder="Your Email">
+                    <button type="submit">Subscribe</button>
                 </form>
             </div>
             <div class="socials">
