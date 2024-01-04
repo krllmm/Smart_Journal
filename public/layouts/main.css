@@ -4,8 +4,9 @@
 }
 
 body{
-    background: #0d1117;
+    background-color: #808791;
     overflow-y: auto;
+    font-family: Roboto, serif;
 }
 
 .container{
@@ -15,21 +16,20 @@ body{
 header{
     display: flex;
     padding: 14px;
-    background-color: #010409;
+    background-color: #565d6c;
 }
 
 .header-start{
     display: flex;
     flex: 1 1 auto;
     gap: 12px;
-    /* border: 1px solid red; */
 }
 
 .header-start button{
     min-width: 32px;
     min-height: 32px;
     background-color: transparent;
-    border: 1px solid #656c76;
+    border: 2px solid #363636;
     border-radius: 8px;
 }
 
@@ -40,15 +40,14 @@ header{
 .header-end{
     display: flex;
     flex: 1 1 auto;
-    /* border: 1px solid green; */
     justify-content: end;
     align-items: center;
     gap: 12px;
 }
 
 .header-end a{
-    color: rgba(255, 255, 255, .7);
-    font-size: 1em;
+    color: rgba(0, 0, 0, .6);
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -56,7 +55,7 @@ header{
     min-width: 32px;
     min-height: 32px;
     background-color: transparent;
-    border: 1px solid #656c76;
+    border: 2px solid #363636;
     border-radius: 8px;
 }
 
@@ -97,7 +96,7 @@ ul{
 ul li a{
     font-size: 24px;
     text-decoration: none;
-    color: #fff;
+    color: #000;
     vertical-align: middle;
 }
 
@@ -112,19 +111,14 @@ form{
 
 form .search{
     border-radius: 8px;
-    border: 1px solid #656c76;
+    border: 2px solid #363636;
     background: transparent;
-    color: #fff;
+    color: #000;
     padding-left: 6px;
     flex: 0.7 1 auto;
     display: flex;
     align-items: center;
-}
-
-.search_bar p{
-    color: #656c76;
-    margin: 0 0 0 8px;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .bottom_row{
