@@ -47,7 +47,7 @@
                 </div>
                 <div>
                     <h2>Популярные статьи</h2>
-
+                    @if(count($popular_articles) != 0)
                         <table class="article_table">
                             <thead class="thead">
                                 <tr class="tr_head">
@@ -81,7 +81,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                    @else
+                        <div class="recent">У вас пока нет статей. <a href="{{ route('article.create') }}">Создать статью</a></div>
+                    @endif
                 </div>
                 <div>
                     <h2>Последняя активность</h2>

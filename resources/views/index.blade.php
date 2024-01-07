@@ -40,7 +40,7 @@
                 <img src="{{ asset("images/books.png") }}">
                 <div>
                     <div class="headline">исследуйте</div>
-                    <div class="line">следуйте за новым</div>
+                    <div class="line">постигайте новое  </div>
                     <div class="buttons">
                         <ul>
                             <li>
