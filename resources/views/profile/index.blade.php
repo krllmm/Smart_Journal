@@ -23,19 +23,19 @@
             <div class="top_left_container">
 
                 <div class="profile_picture">
-                    <img src="{{ $user->profile_picture }}" alt="your profile picture"/>
+                    <img src="{{ $user->profile_picture }}" alt="Ваш аватар"/>
                 </div>
 
                 <div class="buttons">
                     <a href="{{ route('profile.edit', $user->id) }}">
                         <button class="button">
-                            Edit profile
+                            Редактировать
                         </button>
                     </a>
 
                     <a href="{{ route('logout') }}">
                         <button class="button">
-                            Logout
+                            Выйти
                         </button>
                     </a>
                 </div>
@@ -46,17 +46,17 @@
                     <h1>{{ $user->name }} {{ $user->surname}}</h1>
                 </div>
                 <div>
-                    <h2>Popular articles</h2>
-
+                    <h2>Популярные статьи</h2>
+                    @if(count($popular_articles) != 0)
                         <table class="article_table">
                             <thead class="thead">
                                 <tr class="tr_head">
-                                    <th class="column1">Title</th>
-                                    <th class="column3">Deadline</th>
-                                    <th class="column4">Category</th>
-                                    <th class="column5">Tags</th>
-                                    <th class="column6">Status</th>
-                                    <th class="column7">Rating</th>
+                                    <th class="column1">Заголовок</th>
+                                    <th class="column3">Время работы</th>
+                                    <th class="column4">Категория</th>
+                                    <th class="column5">Теги</th>
+                                    <th class="column6">Статус</th>
+                                    <th class="column7">Рейтинг</th>
                                 </tr>
                             </thead>
 
@@ -81,21 +81,23 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                    @else
+                        <div class="recent">У вас пока нет статей. <a href="{{ route('article.create') }}">Создать статью</a></div>
+                    @endif
                 </div>
                 <div>
-                    <h2>Your recent activity(2 weeks)</h2>
+                    <h2>Последняя активность</h2>
                     @if(count($recent_articles) != 0)
                         <table class="article_table">
                             <thead class="thead">
                                 <tr class="tr_head">
-                                    <th class="column1">Title</th>
-                                    <th class="column2">Deadline</th>
-                                    <th class="column3">Category</th>
-                                    <th class="column4">Tags</th>
-                                    <th class="column5">Status</th>
-                                    <th class="column6">Created at</th>
-                                    <th class="column7">Last update</th>
+                                    <th class="column1">Заголовок</th>
+                                    <th class="column2">Время работы</th>
+                                    <th class="column3">Категория</th>
+                                    <th class="column4">Теги</th>
+                                    <th class="column5">Статус</th>
+                                    <th class="column6">Создана</th>
+                                    <th class="column7">Последнее изменение</th>
                                 </tr>
                             </thead>
                             <tbody class="tbody">
@@ -106,17 +108,26 @@
                                         <td class="td">{{ $article->category->category }}</td>
                                         <td class="td">
                                             <div class="tags">
-                                                @foreach ($article->tags as $tag)
-                                                    <div id="tag">
-                                                        {{ $tag->title }}
-                                                    </div>
-                                                @endforeach
+                                                @if(count($article->tags) <= 2)
+                                                    @foreach ($article->tags as $tag)
+                                                        <div id="tag">
+                                                            {{ $tag->title }}
+                                                        </div>
+                                                    @endforeach
+                                                @else
+                                                    <span id="tag">
+                                                        {{ $article->tags[0]->title }}
+                                                    </span>
+                                                    <span id="tag">
+                                                        ...
+                                                    </span>
+                                                @endif
                                             </div>
                                         </td>
                                         <td class="td">{{ $article->status }}</td>
                                         <td class="td">{{ $article->created_at->format('Y-m-d') }}</td>
                                         @if ($article->created_at == $article->updated_at)
-                                            <td class="td">Has`t been updated</td>
+                                            <td class="td">Не изменялась</td>
                                         @else
                                             <td class="td">{{ $article->updated_at->format('Y-m-d') }}</td>
                                         @endif
@@ -125,29 +136,29 @@
                             </tbody>
                         </table>
                     @else
-                        <div class="recent">You have no recent activities</div>
+                        <div class="recent">За последнее время вы ничего не сделали(</div>
                     @endif
 
                 </div>
 
                 <div>
-                    <h2>Deadline calendar</h2>
+                    <h2>Календарь времени работы</h2>
                     <div class="indicators">
                         <div id="indicator">
                             <div class="red"></div>
-                            To do
+                            Необходимо сделать
                         </div>
                         <div id="indicator">
                             <div class="green"></div>
-                            Done
+                            Готов
                         </div>
                         <div id="indicator">
                             <div class="yellow"></div>
-                            In progress
+                            В процессе
                         </div>
                         <div id="indicator">
                             <div class="blue"></div>
-                            Delayed
+                            Перенесен
                         </div>
                     </div>
                     <div id='calendar'></div>
@@ -157,7 +168,7 @@
         </div>
 
         <footer>
-            Powered by Laravel 10
+            Создано с помощью Laravel 10
         </footer>
     </div>
 @endsection

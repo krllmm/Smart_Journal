@@ -1,6 +1,6 @@
-*{
-    margin: 0;
-    padding: 0;
+:root{
+    --main-font-family: Roboto, serif;
+    --main-background-image-big: url("../images/background_big.jpg");
 }
 
 html{
@@ -9,97 +9,75 @@ html{
 
 body{
     height: 100%;
-    background: #010409;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: var(--main-background-image-big);
+    font-family: var(--main-font-family);
 }
 
 .login_card{
-    width: 60%;
-    height: 60%;
-
-    background: #010409;
-    filter: drop-shadow(3px 3px 15px rgba(65, 65, 65, 0.5));
-    border: 2px solid #656c76;
+    background-color: #949393;
+    filter: drop-shadow(3px 3px 15px rgba(65, 65, 65, 0.8));
+    border: 1rem solid #317e6f;
     border-radius: 35px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login_form{
-    padding: 30px 0 30px 0;
+    padding: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .header{
-    margin-bottom: 10px;
-    font-size: 1.8rem;
-    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-label{
-    color: white;
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.form_container input {
-	background: rgba(255,255,255,.1);
-	border: none;
-	border-radius: 4px;
-	font-size: 15px;
-	margin: 0;
-	outline: 0;
-	padding: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	background-color: #e8eeef;
-	color:#5b646a;
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	margin-bottom: 30px;
+form .text {
+    background: rgba(255, 255, 255, .6);
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    margin-left: auto;
 }
 
-.remember {
-    display: flex !important;
-    justify-content: flex-start;
+form .field{
+    display: flex;
+    gap: 1.5rem;
 }
 
-.remember label{
-    width: auto;
-}
-
-.remember input{
-    width: 44px;
-    height: 20px;
+form label{
+    font-size: 1.5rem;
 }
 
 button{
     width: 100%;
-    height: auto;
-    padding: 6px 0;
-    border:  none;
-    border-radius: 4px;
+    padding: .5rem 0;
+    border:  1px solid #000;
+    border-radius: 12px;
     font-size: 1.5rem;
-    background-color: rgb(35, 199, 35);
-}
-
-.name, .login{
-    display: flex;
-    gap: 1rem;
+    background-color: #00ffc8;
+    font-family: var(--main-font-family);
+    margin: 1.5rem 0;
 }
 
 .link{
     color: rgba(255, 255, 255, .7);
     text-align: center;
-    font-size: 1rem;
-    margin-top: 8px;
+    font-size: 1.3rem;
 }
 
 .link a{
     color: white;
+}
+
+.error{
+    font-size: 1.5rem;
+    color: red;
 }
