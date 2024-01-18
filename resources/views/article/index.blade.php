@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="head">Articles</div>
+    <div class="head">Каталог статей</div>
 
     @livewire('filter')
 

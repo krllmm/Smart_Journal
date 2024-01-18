@@ -1,13 +1,14 @@
 .header{
     text-align: start;
     font-size: 2.5rem;
-    margin: .5rem 0;
+    margin: .75rem 0;
 }
 
 main{
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: #000;
 }
 
 .show_container{
@@ -32,7 +33,7 @@ main{
 
 .caption{
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin: .5rem 0;
 }
 
 .info{
@@ -41,6 +42,7 @@ main{
     flex-direction: column;
     gap: .8rem;
     opacity: 0.75;
+    padding: 6px 0;
 }
 
 .author_info{
@@ -57,18 +59,23 @@ span{
 
 .content{
     font-size: 1.5rem;
+    padding-top: 6px;
+}
+
+.download{
+    padding-top: 6px;
 }
 
 .download a{
     font-size: 1.4rem;
     text-decoration: none;
-    color: #3dae98;
+    color: rgba(0, 0, 0, .5);
     opacity: 0.7;
 }
 
-.download a :hover{
+.download a:hover{
     text-decoration: underline;
-    color: #3dae98;
+    color: rgba(0, 0, 0, 1);
     opacity: 1;
 }
 
@@ -94,4 +101,5 @@ footer{
     border-top: 1px solid #656c76;
     margin-top: 2rem;
     line-height: 60px;
+    color: #000;
 }

@@ -25,15 +25,15 @@ header{
     gap: 12px;
 }
 
-.header-start button{
+.header-start .button_start{
     min-width: 32px;
     min-height: 32px;
     background-color: transparent;
-    border: 2px solid #363636;
+    border: 2px solid rgba(0, 0, 0, .75);
     border-radius: 8px;
 }
 
-.header-start button svg{
+.header-start .button_start svg{
     margin: 4px;
 }
 
@@ -51,11 +51,11 @@ header{
     text-decoration: none;
 }
 
-.header-end button{
+.header-end .button_end{
     min-width: 32px;
     min-height: 32px;
     background-color: transparent;
-    border: 2px solid #363636;
+    border: 2px solid rgba(0, 0, 0, .75);
     border-radius: 8px;
 }
 
@@ -72,15 +72,16 @@ header{
     visibility: hidden;
 }
 
+
 #dropdown{
     position: absolute;
     background-color: #656c76;
-    min-width: 180px;
-    min-height: 230px;
-    text-align: left;
     border-radius: 12px;
-    margin-top: 58px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.33);
+    margin-top: 60px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding: .5rem;
+    z-index: 10;
 }
 
 ul{
@@ -88,17 +89,26 @@ ul{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 16px;
-    padding: 10px;
-    margin: 0;
+    gap: 1rem;
+}
+
+ul li{
+    display: flex;
 }
 
 ul li a{
-    font-size: 24px;
+    font-size: 2rem;
     text-decoration: none;
-    color: #000;
-    vertical-align: middle;
+    color: rgba(0, 0, 0, .75);
+    margin: auto 0 auto .5rem;
 }
+
+ul li a:hover{
+    color: rgba(0, 0, 0, 1);
+    text-decoration: underline;
+}
+
+
 
 .search_bar{
     flex: 0.7 1 auto;
@@ -111,7 +121,7 @@ form{
 
 form .search{
     border-radius: 8px;
-    border: 2px solid #363636;
+    border: 2px solid rgba(0, 0, 0, .75);
     background: transparent;
     color: #000;
     padding-left: 6px;
@@ -124,7 +134,6 @@ form .search{
 .bottom_row{
     color: white;
     display: flex;
-    /* background-color: rgba(255, 255, 255, 0.85); */
     width: 80%;
     margin: 0 auto;
 }
@@ -153,4 +162,8 @@ dialog button{
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.85);
+}
+
+.empty{
+    margin: .5rem 0;
 }
