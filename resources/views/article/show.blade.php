@@ -8,101 +8,53 @@
     <main>
         <div class="show_container">
             <div class="details">
-                {{-- @if (Auth::user()->id == $article->author->id) --}}
                 <div class="header">
                     {{ $article->title }}
                 </div>
-
-                {{-- <div class="indicators">
-                    @foreach ($article->tags as $tag)
-                        <div id="indicator">{{ $tag->title }}</div>
-                    @endforeach
-                </div>
-
-                <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
-                            {{ $article->category->category }} <span>&#x2022;</span>
-                            {{ $article->rating }} points
-                </div> --}}
                 <hr>
-
-
-
                 <div class="content">
                     {{ $article->content }}
                 </div>
-
-                {{-- <div>
-                Status: {{ $article->status }}
-            </div> --}}
-
-
-                {{-- <div>co authors:
-                @foreach ($article->Co_authors as $coa)
-                    <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
-                @endforeach
-            </div> --}}
-
-                {{-- <div>
-                    <a href="{{ route('download', $article->id) }}">download</a> .docx file
-                </div> --}}
-
-                {{-- <div>history:
-                @foreach ($article->history as $history)
-                    <div>{{ $history->content }}, {{ $history->created_at }}</div>
-                @endforeach
-            </div> --}}
-                {{-- @else --}}
-
-                {{-- @endif --}}
             </div>
-
             <div class="sidebar">
-                <div class="caption">Author</div>
+                <div class="caption">Автор</div>
                 <div class="author_info">
                     <div>{{ $article->author->name}} {{ $article->author->surname}}</div>
                 </div>
                 <hr>
 
-                <div class="caption">Tags</div>
-                <div class="indicators">
-                    @foreach ($article->tags as $tag)
-                        <div id="indicator">{{ $tag->title }}</div>
-                    @endforeach
-                </div>
-                <hr>
+                @if(count($article->tags) != 0)
+                    <div class="caption">Теги</div>
+                    <div class="indicators">
+                        @foreach ($article->tags as $tag)
+                            <div id="indicator">{{ $tag->title }}</div>
+                        @endforeach
+                    </div>
+                    <hr>
+                @endif
 
                 <div class="info">
-                    <div>Posted: {{ $article->created_at->format('d.m.Y h:m') }}</div>
-                    <div>Category: {{ $article->category->category }}</div>
-                    <div>Rating: {{ $article->rating }}</div>
-                    <div>Status: {{ $article->status }}</div>
+                    <div>Опубликовано: {{ $article->created_at->format('d.m.Y h:m') }}</div>
+                    <div>Категория: {{ $article->category->category }}</div>
+                    <div>Рейтинг: {{ $article->rating }}</div>
                 </div>
                 <hr>
-
-                <div>
-                    <div class="caption">With the help of:</div>
-                    @foreach ($article->Co_authors as $coa)
-                        <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
-                    @endforeach
-                </div>
-                <hr>
-                <div>History:
-                    @foreach ($article->history as $history)
-                        <div>{{ $history->content }}, {{ $history->created_at }}, {{ $history->comment }}</div>
-                    @endforeach
-                </div>
-                <hr>
-
+                @if(count($article->Co_authors) != 0)
+                    <div>
+                        <div class="caption">With the help of:</div>
+                        @foreach ($article->Co_authors as $coa)
+                            <div><a href="{{ route('user', $coa->id) }}">{{ $coa->login }}</a></div>
+                        @endforeach
+                    </div>
+                    <hr>
+                @endif
                 <div class="download">
-                    <a href="{{ route('download', $article->id) }}">Download file</a>
+                    <a href="{{ route('download', $article->id) }}">Загрузить файл</a>
                 </div>
             </div>
         </div>
-        </div>
-
         <footer>
             Powered by Laravel 10
         </footer>
-
     </main>
 @endsection
