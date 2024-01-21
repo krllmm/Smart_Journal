@@ -1,14 +1,14 @@
 <div class="content-container">
     <div class="indicators">
         <button wire:click="sortByRating" id="indicator">
-            By rating
+            По рейтингу
         </button>
         <button wire:click="Latest" id="indicator">
             {{-- последние получившие статус Done --}}
-            Latest
+            Последние
         </button>
         <button wire:click="Oldest" id="indicator">
-            Oldest
+            Старые
         </button>
     </div>
 
@@ -23,8 +23,8 @@
                 <div class="options">
                     <div id="date">{{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
                         {{ $article->category->category }} <span>&#x2022;</span>
-                        {{ $article->rating }} points</div>
-                    <a href="{{ route('article.edit', $article->id) }}"><div>Дополнить</div></a>
+                        Рейтинг: {{ $article->rating }} </div>
+                    <a href="{{ route('article.edit', $article->id) }}"><div>Дополнить/Изменить</div></a>
                 </div>
             </div>
         </div>

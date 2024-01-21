@@ -1,13 +1,18 @@
 .info{
-    width: 60%;
-    margin: auto;
+    width: 70%;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
 }
 
 .info div{
     display: flex;
-    flex-direction: column;
+}
+
+input, textarea{
+    width: 80%;
+    margin-left: auto;
+    font-size: 1.25rem;
 }
 
 .social_label{
@@ -16,11 +21,14 @@
 
 .socials{
     gap: .75rem;
+    display: flex;
+    flex-direction: column;
 }
 
 label{
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     margin: .9rem 0 .3rem 0;
+    color: #100f0f;
 }
 
 .input{
@@ -28,7 +36,6 @@ label{
     font-size: 1.2rem;
     border: 1px solid #656c76;
     background: transparent;
-    color: white;
     padding: 6px;
 }
 
@@ -36,16 +43,14 @@ textarea{
     background: transparent;
     border: 1px solid #656c76;
     border-radius: 8px;
-    color: white;
     padding: .6rem;
 }
 
 .save{
-    background: transparent;
     border: 1px solid #656c76;
     background-color: rgb(35, 199, 35, .6);
-    color: white;
-    padding: 6px;
+    padding: .5rem;
+    font-size: 1.25rem;
 }
 
 footer{
@@ -53,4 +58,6 @@ footer{
     border-top: 1px solid #656c76;
     margin-top: 2rem;
     line-height: 60px;
+    color: #100f0f;
 }
+

@@ -108,11 +108,11 @@
                             @else
                                 <div class="empty">Ваша почта пуста</div>
                             @endif
-                        <button close-message-box>Выйти</button>
+                        <button class="close_button" close-message-box>Выйти</button>
                     </dialog>
 
                     <button open-trash-box class="button_end">
-                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" version="1.1" width="24" data-view-component="true">
+                        <svg aria-hidden="true" height="24" viewBox="0 0 24 24" width="24" data-view-component="true">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1h4a1 1 0 1 1 0 2h-1v10a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8H5a1 1 0 0 1 0-2h4V5zm1 3H8v10a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V8h-6zm3-2h-2V5h2v1zm-3 3a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0v-7a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v7a1 1 0 1 1-2 0v-7a1 1 0 0 1 1-1z" fill="#000000bf"/>
                         </svg>
                     </button>
@@ -131,11 +131,11 @@
                                 <div class="empty">Ваша корзина пуста</div>
                             @endif
 
-                        <button close-trash-box>Выйти</button>
+                        <button close-trash-box class="close_button">Выйти</button>
                     </dialog>
                 @endif
 
-                <a href="{{ route('profile') }}"> {{ Auth::user()->name }} {{ Auth::user()->surname}} </a>
+                <a href="{{ route('profile') }}" class="profile_name"> {{ Auth::user()->name }} {{ Auth::user()->surname}} </a>
 
                 <img src="{{ asset('images/default_profile.png') }}"/>
 
