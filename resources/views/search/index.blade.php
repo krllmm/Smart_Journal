@@ -1,7 +1,7 @@
 <link href="{{ asset('_search/index.css') }}" rel="stylesheet">
 @extends('layouts.main')
 @section('title')
-    Search
+    Результат по запросу: "{{ $input }}"
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
                         <div id="date">{{ $article->category->category }} <span>&#x2022;</span>
                                        {{ $article->created_at->format('d.m.Y') }} <span>&#x2022;</span>
                                        {{ $article->rating }} points</div>
-                        <a href="{{ route('article.edit', $article->id) }}"><div>Expand</div></a>
+                        <a href="{{ route('article.edit', $article->id) }}"><div>Дополнить</div></a>
                     </div>
                 </div>
             </div>

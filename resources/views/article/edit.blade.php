@@ -1,12 +1,12 @@
 <link rel="stylesheet" href="{{ asset('_article/edit.css') }}">
 @extends('layouts.main')
 @section('title')
-    Articles - edit
+    Редактирование статьи
 @endsection
 
 @section('content')
 
-    <div class="header">Update article by {{ $article->author->name }} {{ $article->author->surname }}</div>
+    <div class="header">Редактировать "{{ $article->title }}"</div>
 
     <form class="info" action="{{ route('article.update', $article->id) }}" method="POST">
         @csrf
@@ -14,24 +14,24 @@
 
         @if (Auth::user()->id == $article->author->id)
             <div>
-                <label for="title">Article title</label>
-                <input name="title" type="text" autocomplete="off" placeholder="Enter article`s title"
+                <label for="title">Заголовок</label>
+                <input name="title" type="text" autocomplete="off" placeholder="Введите заголовок"
                     value="{{ $article->title }}" class="input">
             </div>
 
             <div>
-                <label for="content">Content</label>
-                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input">{{ $article->content }}</textarea>
+                <label for="content">Основная часть</label>
+                <textarea rows="26" name="content" autocomplete="off" placeholder="Введите основную часть" class="input">{{ $article->content }}</textarea>
             </div>
 
             <div>
-                <label for="deadline">Deadline</label>
+                <label for="deadline">Дедлайн</label>
                 <input name="deadline" type="date" autocomplete="off" value="{{ $article->deadline }}" class="input">
             </div>
 
             <div>
-                <label for="status">Status</label>
-                <select type="text" name="status" placeholder="Status" class="select">
+                <label for="status">Статус</label>
+                <select type="text" name="status" class="select">
                     @foreach ($statuses as $status)
                         <option {{ $status === $article->status ? ' selected' : '' }} value="{{ $status }}">
                             {{ $status }}</option>
@@ -40,8 +40,8 @@
             </div>
 
             <div>
-                <label for="category_id">Category</label>
-                <select type="text" name="category_id" placeholder="Choose a category" class="select select_category">
+                <label for="category_id">Категория</label>
+                <select type="text" name="category_id" class="select select_category">
                     @foreach ($categories as $category)
                         <option {{ $category->id === $article->category->id ? ' selected' : '' }}
                             value="{{ $category->id }}"> {{ $category->category }}</option>
@@ -50,8 +50,8 @@
             </div>
 
             <div>
-                <label for="tag_id">Tags</label>
-                <select multiple type="text" name="tags[]" placeholder="Choose tags" class="select select_tags">
+                <label for="tag_id">Теги (минимум 1)</label>
+                <select multiple type="text" name="tags[]" class="select select_tags">
                     @foreach ($tags as $tag)
                         <option
                             @foreach ($article->tags as $articleTag)
@@ -60,24 +60,25 @@
                     @endforeach
                 </select>
             </div>
+            <div>
+                @if ($errors->has('tags'))
+                    <span class="error">{{ $errors->first('tags') }}</span>
+                @endif
+            </div>
         @else
-            <div class="header">
-                {{ $article->title }}
+            <div>
+                <label for="content">Основная часть</label>
+                <textarea rows="36" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input textarea-content">{{ $article->content }}</textarea>
             </div>
 
             <div>
-                <label for="content">Content</label>
-                <textarea rows="12" name="content" autocomplete="off" placeholder="Enter article`s body here" class="input textarea-content">{{ $article->content }}</textarea>
-            </div>
-
-            <div>
-                <label for="comment">Comment</label>
-                <textarea name="comment" type="text" autocomplete="off" placeholder="Your comment" class="input textarea-comment"></textarea>
+                <label for="comment">Комментарий</label>
+                <textarea name="comment" type="text" autocomplete="off" placeholder="Введите комментарий" class="input textarea-comment"></textarea>
             </div>
         @endif
 
         <div>
-            <button type="submit" class="update"><span>Update</span></button>
+            <button type="submit" class="update"><span>Отправить</span></button>
         </div>
     </form>
 

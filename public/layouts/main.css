@@ -72,7 +72,6 @@ header{
     visibility: hidden;
 }
 
-
 #dropdown{
     position: absolute;
     background-color: #656c76;
@@ -108,7 +107,12 @@ ul li a:hover{
     text-decoration: underline;
 }
 
-
+.close_button{
+    border: 1px solid rgba(255, 255, 255, .75);
+    background: #1a202c;
+    padding: .5rem;
+    border-radius: .5rem;
+}
 
 .search_bar{
     flex: 0.7 1 auto;
@@ -166,4 +170,14 @@ dialog::backdrop {
 
 .empty{
     margin: .5rem 0;
+}
+
+.profile_name{
+    color: #100f0f;
+    opacity: .75;
+}
+
+.profile_name:hover{
+    color: #100f0f;
+    opacity: 1;
 }

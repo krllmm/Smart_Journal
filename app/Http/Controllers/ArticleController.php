@@ -30,13 +30,14 @@ class ArticleController extends Controller
             'title' => 'string|required|max:255',
             'content' => 'string|required',
             'status' => '',
-            'deadline' => 'date|required',
+            'deadline' => 'required',
             'category_id' => '',
-            'tags' => '',
+            'tags' => 'required',
         ], [
-            'title' => 'Title field cannot be empty',
-            'content'  => 'Content field cannot be empty',
-            'dealine' => 'Deadline date field cannot be empty'
+            'title' => 'Заголовок не может быть пустым',
+            'content'  => 'Основная часть не может быть пустой',
+            'deadline' => 'Дата дедлайна должна быть определена',
+            'tags.required' => 'Выберите минимум 1 тег',
         ]);
 
         $data = $request->all();
@@ -85,7 +86,9 @@ class ArticleController extends Controller
                 'status' => '',
                 'deadline' => 'date',
                 'category_id' => '',
-                'tags' => '',
+                'tags' => 'required',
+            ], [
+                'tags.required' => 'Выберите минимум 1 тег',
             ]);
 
             $data = $request->all();

@@ -14,7 +14,7 @@
 
 @extends('layouts.main')
 @section('title')
-    {{ $user->login }}
+    {{ $user->name }} {{ $user->surname }}
 @endsection
 
 @section('content')
@@ -52,7 +52,7 @@
                             <thead class="thead">
                                 <tr class="tr_head">
                                     <th class="column1">Заголовок</th>
-                                    <th class="column3">Время работы</th>
+                                    <th class="column3">Дедлайн</th>
                                     <th class="column4">Категория</th>
                                     <th class="column5">Теги</th>
                                     <th class="column6">Статус</th>
@@ -92,7 +92,7 @@
                             <thead class="thead">
                                 <tr class="tr_head">
                                     <th class="column1">Заголовок</th>
-                                    <th class="column2">Время работы</th>
+                                    <th class="column2">Дедлайн</th>
                                     <th class="column3">Категория</th>
                                     <th class="column4">Теги</th>
                                     <th class="column5">Статус</th>

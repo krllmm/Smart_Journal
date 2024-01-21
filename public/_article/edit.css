@@ -1,11 +1,12 @@
 .header{
     text-align: center;
     font-size: 2rem;
-    margin: .5rem 0;
+    margin: 1rem 0;
+    color: #100f0f;
 }
 
 .info{
-    width: 60%;
+    width: 70%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -13,11 +14,18 @@
 
 .info div{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 label{
+    font-size: 1.2rem;
     margin: .8rem 0 .4rem 0;
+    color: #100f0f;
+}
+
+.input, .textarea, .select{
+    width: 80%;
+    margin-left: auto;
 }
 
 .input, .select{
@@ -25,47 +33,24 @@ label{
     font-size: 1.2rem;
     border: 1px solid #656c76;
     background: transparent;
-    color: white;
     padding: 6px;
 }
 
-.textarea-content{
-    height: 550px;
-}
-
-.textarea-comment{
-    height: 150px;
-}
-
-.select_category option{
-    color: black;
-}
-
-option{
-    color: white;
-}
-
-.tag{
-    color: white;
-}
-
 .select_tags{
-    height: 200px;
+    min-height: 150px;
 }
 
 .update{
     border: 1px solid #656c76;
     background-color: rgb(35, 199, 35, .6);
-    color: white;
-    padding: 6px;
+    padding: .5rem .75rem;
+    border-radius: .5rem;
     font-size: 1.2rem;
 }
 
 textarea{
-    background: transparent;
     border: 1px solid #656c76;
     border-radius: 8px;
-    color: white;
     padding: .6rem;
 }
 
@@ -74,4 +59,11 @@ footer{
     border-top: 1px solid #656c76;
     margin-top: 2rem;
     line-height: 60px;
+    color: #100f0f;
+}
+
+.error{
+    font-size: 1.25rem;
+    margin-bottom: .75rem;
+    color: red;
 }

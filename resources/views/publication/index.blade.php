@@ -2,7 +2,7 @@
 <link href="{{ asset('_article/index.css') }}" rel="stylesheet">
 @extends('layouts.main')
 @section('title')
-    Your publications
+    Мои статьи
 @endsection
 
 @section('content')
