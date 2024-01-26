@@ -19,21 +19,6 @@ Instruments of Laravel 10
     <li>PHPWord library</li>
 </ul>
 
-## How to Install and Run the Project
-In VS Code after your clone the repo
-```
-npm install
-```
-And then
-```
-npm run build
-```
-This should create all of the necessary.
-To launch the project execute
-
-```
-php artisan serve
-```
 ## How to Use the Project
 
 The fisrt thing you should do is create an account. After that you are ready to interact with articles!
