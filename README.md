@@ -19,10 +19,6 @@ Instruments of Laravel 10
     <li>PHPWord library</li>
 </ul>
 
-## How to Use the Project
-
-The fisrt thing you should do is create an account. After that you are ready to interact with articles!
-
 ## License
 
 This project is licensed under the terms of the MIT license.
